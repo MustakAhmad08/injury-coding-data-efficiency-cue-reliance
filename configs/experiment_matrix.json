@@ -1,0 +1,118 @@
+{
+  "seed": 20260718,
+  "models": {
+    "mistral": "mistralai/Mistral-7B-Instruct-v0.3",
+    "qwen": "Qwen/Qwen2.5-7B-Instruct"
+  },
+  "shared_test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+  "shared_validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+  "fewshot_file": "data/neiss_temporal_2021_2025/fewshot_10.jsonl",
+  "conditions": [
+    {
+      "condition_id": "mistral_0shot",
+      "family": "mistral",
+      "method": "0-shot",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "shots": 0,
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "fewshot_file": "data/neiss_temporal_2021_2025/fewshot_10.jsonl",
+      "output_dir": "methods_runs/mistral_0shot"
+    },
+    {
+      "condition_id": "mistral_10shot",
+      "family": "mistral",
+      "method": "10-shot",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "shots": 10,
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "fewshot_file": "data/neiss_temporal_2021_2025/fewshot_10.jsonl",
+      "output_dir": "methods_runs/mistral_10shot"
+    },
+    {
+      "condition_id": "mistral_sft_1000",
+      "family": "mistral",
+      "method": "sft",
+      "training_size": 1000,
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "train_file": "data/neiss_temporal_2021_2025/ablations/train_1000.jsonl",
+      "validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "output_dir": "methods_runs/mistral_sft_1000"
+    },
+    {
+      "condition_id": "mistral_sft_3000",
+      "family": "mistral",
+      "method": "sft",
+      "training_size": 3000,
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "train_file": "data/neiss_temporal_2021_2025/ablations/train_3000.jsonl",
+      "validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "output_dir": "methods_runs/mistral_sft_3000"
+    },
+    {
+      "condition_id": "mistral_sft_6000",
+      "family": "mistral",
+      "method": "sft",
+      "training_size": 6000,
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "train_file": "data/neiss_temporal_2021_2025/ablations/train_6000.jsonl",
+      "validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "output_dir": "methods_runs/mistral_sft_6000"
+    },
+    {
+      "condition_id": "qwen_0shot",
+      "family": "qwen",
+      "method": "0-shot",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "shots": 0,
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "fewshot_file": "data/neiss_temporal_2021_2025/fewshot_10.jsonl",
+      "output_dir": "methods_runs/qwen_0shot"
+    },
+    {
+      "condition_id": "qwen_10shot",
+      "family": "qwen",
+      "method": "10-shot",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "shots": 10,
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "fewshot_file": "data/neiss_temporal_2021_2025/fewshot_10.jsonl",
+      "output_dir": "methods_runs/qwen_10shot"
+    },
+    {
+      "condition_id": "qwen_sft_1000",
+      "family": "qwen",
+      "method": "sft",
+      "training_size": 1000,
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "train_file": "data/neiss_temporal_2021_2025/ablations/train_1000.jsonl",
+      "validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "output_dir": "methods_runs/qwen_sft_1000"
+    },
+    {
+      "condition_id": "qwen_sft_3000",
+      "family": "qwen",
+      "method": "sft",
+      "training_size": 3000,
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "train_file": "data/neiss_temporal_2021_2025/ablations/train_3000.jsonl",
+      "validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "output_dir": "methods_runs/qwen_sft_3000"
+    },
+    {
+      "condition_id": "qwen_sft_6000",
+      "family": "qwen",
+      "method": "sft",
+      "training_size": 6000,
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "train_file": "data/neiss_temporal_2021_2025/ablations/train_6000.jsonl",
+      "validation_file": "data/neiss_temporal_2021_2025/validation.jsonl",
+      "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+      "output_dir": "methods_runs/qwen_sft_6000"
+    }
+  ]
+}

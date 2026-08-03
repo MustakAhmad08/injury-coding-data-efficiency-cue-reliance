@@ -1,0 +1,28 @@
+{
+  "model_family": "qwen",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_label": "Qwen2.5-7B",
+  "split": "2024 validation/development only",
+  "n_cases": 300,
+  "validation_sha256": "f39777771be6165df7e890b9fa533da33b0d772b81c659746b04dbaa131fe22c",
+  "fewshot_sha256": "da168fe177de398ade4d180ddb487520ba1d95c7973d1aa551662059611a1a65",
+  "conditions": [
+    "minimal",
+    "codebook",
+    "operational_rules",
+    "demonstrations"
+  ],
+  "prompt_sha256": {
+    "minimal": "cda21d77ccf5bc378abdb7835eee748921135ad563b07532da33e00fdb68dc2a",
+    "codebook": "99e00da54c907df0b5252b419c2c875fd21947daf1d0baa7fb7b85f7725349d8",
+    "operational_rules": "6885d8b06f7429480a6958ebb4ae36f3392a33cb2d7408ab21b1dca885f02b49",
+    "demonstrations": "6885d8b06f7429480a6958ebb4ae36f3392a33cb2d7408ab21b1dca885f02b49"
+  },
+  "seed": 20260718,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 32,
+    "batch_size": 8
+  },
+  "provenance_warning": "The operational-rule condition uses current study rules. Independent line-by-line verification against the official manual is pending."
+}

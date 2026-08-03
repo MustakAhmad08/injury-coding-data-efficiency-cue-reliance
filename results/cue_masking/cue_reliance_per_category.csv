@@ -1,0 +1,181 @@
+condition,model,variant,diagnosis_code,diagnosis_category,n,original_recall,masked_recall,recall_drop,recall_drop_ci_low,recall_drop_ci_high
+qwen_sft_6000,Qwen SFT 6K,marker_only,41,Ingestion,50,0.92,0.92,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,42,Aspiration,50,0.86,0.86,0.0,-0.05999999999999994,0.05999999999999994
+qwen_sft_6000,Qwen SFT 6K,marker_only,46,Electrical burn,50,0.98,0.96,0.020000000000000018,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,marker_only,47,"Burn, not specified",50,0.76,0.8,-0.040000000000000036,-0.09999999999999998,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,48,Scald burn,50,0.96,0.96,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,49,Chemical burn,50,0.98,1.0,-0.020000000000000018,-0.06000000000000005,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,50,Amputation,50,0.98,1.0,-0.020000000000000018,-0.06000000000000005,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,51,Thermal burn,50,0.36,0.44,-0.08000000000000002,-0.18,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,52,Concussion,50,1.0,1.0,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,53,Contusion/abrasion,50,0.92,0.9,0.020000000000000018,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,marker_only,54,Crushing injury,50,0.98,0.98,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,55,Dislocation,50,0.96,0.96,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,56,Foreign body,50,1.0,1.0,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,57,Fracture,50,1.0,1.0,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,58,Hematoma,50,0.9,0.92,-0.020000000000000018,-0.06000000000000005,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,59,Laceration,50,0.9,0.88,0.020000000000000018,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,marker_only,60,Dental injury,50,0.98,1.0,-0.020000000000000018,-0.06000000000000005,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,61,Nerve damage,50,0.9,0.9,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,62,Internal injury,50,0.76,0.66,0.09999999999999998,0.020000000000000018,0.19999999999999996
+qwen_sft_6000,Qwen SFT 6K,marker_only,63,Puncture,50,0.86,0.86,0.0,-0.06000000000000005,0.05999999999999994
+qwen_sft_6000,Qwen SFT 6K,marker_only,64,Strain/sprain,50,0.94,0.92,0.019999999999999907,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,marker_only,65,Anoxia,50,0.9,0.88,0.020000000000000018,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,marker_only,66,Hemorrhage,50,0.96,0.94,0.020000000000000018,-0.040000000000000036,0.09999999999999998
+qwen_sft_6000,Qwen SFT 6K,marker_only,67,Electric shock,50,0.94,0.92,0.019999999999999907,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,marker_only,68,Poisoning,50,0.88,0.88,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,69,Submersion,50,0.94,0.98,-0.040000000000000036,-0.09999999999999998,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,71,Unknown/not stated,50,0.78,0.6,0.18000000000000005,0.07999999999999996,0.3
+qwen_sft_6000,Qwen SFT 6K,marker_only,72,Avulsion,50,1.0,0.96,0.040000000000000036,0.0,0.09999999999999998
+qwen_sft_6000,Qwen SFT 6K,marker_only,73,Radiation injury,50,0.92,0.92,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,marker_only,74,Dermatitis/conjunctivitis,50,0.98,0.96,0.020000000000000018,0.0,0.07999999999999996
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,41,Ingestion,50,0.92,0.76,0.16000000000000003,0.06000000000000005,0.26
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,42,Aspiration,50,0.86,0.82,0.040000000000000036,-0.040000000000000036,0.12
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,46,Electrical burn,50,0.98,0.6,0.38,0.26,0.52
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,47,"Burn, not specified",50,0.76,0.62,0.14,-0.01999999999999991,0.28
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,48,Scald burn,50,0.96,0.94,0.020000000000000018,0.0,0.06000000000000005
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,49,Chemical burn,50,0.98,0.66,0.31999999999999995,0.18000000000000005,0.4404999999999995
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,50,Amputation,50,0.98,0.6,0.38,0.24,0.5004999999999995
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,51,Thermal burn,50,0.36,0.4,-0.040000000000000036,-0.18,0.12
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,52,Concussion,50,1.0,0.02,0.98,0.94,1.0
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,53,Contusion/abrasion,50,0.92,0.12,0.8,0.6799999999999999,0.9
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,54,Crushing injury,50,0.98,0.12,0.86,0.76,0.96
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,55,Dislocation,50,0.96,0.34,0.6199999999999999,0.4995,0.76
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,56,Foreign body,50,1.0,1.0,0.0,0.0,0.0
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,57,Fracture,50,1.0,0.26,0.74,0.62,0.86
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,58,Hematoma,50,0.9,0.34,0.56,0.38000000000000006,0.7000000000000001
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,59,Laceration,50,0.9,0.28,0.62,0.48000000000000004,0.74
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,60,Dental injury,50,0.98,0.58,0.4,0.26,0.54
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,61,Nerve damage,50,0.9,0.26,0.64,0.49999999999999994,0.76
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,62,Internal injury,50,0.76,0.44,0.32,0.14,0.48
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,63,Puncture,50,0.86,0.62,0.24,0.09999999999999998,0.3999999999999999
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,64,Strain/sprain,50,0.94,0.18,0.76,0.64,0.8604999999999996
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,65,Anoxia,50,0.9,0.8,0.09999999999999998,0.020000000000000018,0.18000000000000005
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,66,Hemorrhage,50,0.96,0.58,0.38,0.24,0.52
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,67,Electric shock,50,0.94,0.86,0.07999999999999996,-0.020000000000000018,0.18000000000000005
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,68,Poisoning,50,0.88,0.82,0.06000000000000005,-0.020000000000000018,0.14
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,69,Submersion,50,0.94,0.98,-0.040000000000000036,-0.09999999999999998,0.0
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,71,Unknown/not stated,50,0.78,0.46,0.32,0.19999999999999996,0.45999999999999996
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,72,Avulsion,50,1.0,0.16,0.84,0.74,0.94
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,73,Radiation injury,50,0.92,0.86,0.06000000000000005,-0.040000000000000036,0.15999999999999992
+qwen_sft_6000,Qwen SFT 6K,diagnosis_tail,74,Dermatitis/conjunctivitis,50,0.98,0.86,0.12,0.040000000000000036,0.21999999999999997
+mistral_sft_3000,Mistral SFT 3K,marker_only,41,Ingestion,50,0.98,1.0,-0.020000000000000018,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,42,Aspiration,50,0.9,0.92,-0.020000000000000018,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,46,Electrical burn,50,0.88,0.88,0.0,-0.07999999999999996,0.07999999999999996
+mistral_sft_3000,Mistral SFT 3K,marker_only,47,"Burn, not specified",50,0.52,0.56,-0.040000000000000036,-0.10000000000000003,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,48,Scald burn,50,0.98,0.98,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,49,Chemical burn,50,0.98,0.96,0.020000000000000018,0.0,0.06000000000000005
+mistral_sft_3000,Mistral SFT 3K,marker_only,50,Amputation,50,0.94,0.96,-0.020000000000000018,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,51,Thermal burn,50,0.54,0.54,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,52,Concussion,50,1.0,1.0,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,53,Contusion/abrasion,50,0.86,0.86,0.0,-0.05999999999999994,0.06000000000000005
+mistral_sft_3000,Mistral SFT 3K,marker_only,54,Crushing injury,50,0.98,0.98,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,55,Dislocation,50,0.96,0.96,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,56,Foreign body,50,0.92,0.92,0.0,-0.05999999999999994,0.05999999999999994
+mistral_sft_3000,Mistral SFT 3K,marker_only,57,Fracture,50,0.98,0.98,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,58,Hematoma,50,0.92,0.94,-0.019999999999999907,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,59,Laceration,50,0.88,0.86,0.020000000000000018,0.0,0.06000000000000005
+mistral_sft_3000,Mistral SFT 3K,marker_only,60,Dental injury,50,0.92,0.94,-0.019999999999999907,-0.07999999999999996,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,61,Nerve damage,50,0.88,0.82,0.06000000000000005,0.0,0.14
+mistral_sft_3000,Mistral SFT 3K,marker_only,62,Internal injury,50,0.86,0.78,0.07999999999999996,0.020000000000000018,0.16000000000000003
+mistral_sft_3000,Mistral SFT 3K,marker_only,63,Puncture,50,0.92,0.92,0.0,-0.08000000000000007,0.07999999999999996
+mistral_sft_3000,Mistral SFT 3K,marker_only,64,Strain/sprain,50,0.92,0.92,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,65,Anoxia,50,0.9,0.92,-0.020000000000000018,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,66,Hemorrhage,50,0.88,0.88,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,67,Electric shock,50,0.96,0.98,-0.020000000000000018,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,68,Poisoning,50,0.78,0.7,0.08000000000000007,0.019999999999999907,0.16000000000000003
+mistral_sft_3000,Mistral SFT 3K,marker_only,69,Submersion,50,0.88,0.94,-0.05999999999999994,-0.12,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,71,Unknown/not stated,50,0.66,0.54,0.12,0.039999999999999925,0.20000000000000007
+mistral_sft_3000,Mistral SFT 3K,marker_only,72,Avulsion,50,1.0,1.0,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,73,Radiation injury,50,0.92,0.94,-0.019999999999999907,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,marker_only,74,Dermatitis/conjunctivitis,50,0.86,0.84,0.020000000000000018,0.0,0.06000000000000005
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,41,Ingestion,50,0.98,1.0,-0.020000000000000018,-0.06000000000000005,0.0
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,42,Aspiration,50,0.9,0.88,0.020000000000000018,-0.06000000000000005,0.10000000000000009
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,46,Electrical burn,50,0.88,0.56,0.31999999999999995,0.17999999999999994,0.4799999999999999
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,47,"Burn, not specified",50,0.52,0.5,0.020000000000000018,-0.08050000000000004,0.13999999999999996
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,48,Scald burn,50,0.98,0.98,0.0,0.0,0.0
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,49,Chemical burn,50,0.98,0.86,0.12,0.040000000000000036,0.21999999999999997
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,50,Amputation,50,0.94,0.84,0.09999999999999998,-0.020000000000000018,0.21999999999999997
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,51,Thermal burn,50,0.54,0.6,-0.05999999999999994,-0.14,0.0
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,52,Concussion,50,1.0,0.02,0.98,0.94,1.0
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,53,Contusion/abrasion,50,0.86,0.16,0.7,0.54,0.8400000000000001
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,54,Crushing injury,50,0.98,0.2,0.78,0.6599999999999999,0.9
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,55,Dislocation,50,0.96,0.26,0.7,0.58,0.8200000000000001
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,56,Foreign body,50,0.92,0.88,0.040000000000000036,-0.040000000000000036,0.12
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,57,Fracture,50,0.98,0.08,0.9,0.8,0.98
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,58,Hematoma,50,0.92,0.34,0.5800000000000001,0.42,0.72
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,59,Laceration,50,0.88,0.64,0.24,0.12,0.38
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,60,Dental injury,50,0.92,0.64,0.28,0.16000000000000003,0.41999999999999993
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,61,Nerve damage,50,0.88,0.1,0.78,0.66,0.88
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,62,Internal injury,50,0.86,0.56,0.29999999999999993,0.14,0.46
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,63,Puncture,50,0.92,0.62,0.30000000000000004,0.15949999999999995,0.45999999999999996
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,64,Strain/sprain,50,0.92,0.12,0.8,0.6799999999999999,0.9
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,65,Anoxia,50,0.9,0.84,0.06000000000000005,-0.040000000000000036,0.17999999999999994
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,66,Hemorrhage,50,0.88,0.54,0.33999999999999997,0.2195,0.4799999999999999
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,67,Electric shock,50,0.96,0.86,0.09999999999999998,0.0,0.19999999999999996
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,68,Poisoning,50,0.78,0.54,0.24,0.10000000000000009,0.36000000000000004
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,69,Submersion,50,0.88,0.92,-0.040000000000000036,-0.15999999999999992,0.06000000000000005
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,71,Unknown/not stated,50,0.66,0.42,0.24000000000000005,0.11999999999999994,0.37999999999999995
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,72,Avulsion,50,1.0,0.16,0.84,0.72,0.94
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,73,Radiation injury,50,0.92,0.86,0.06000000000000005,-0.020000000000000018,0.14
+mistral_sft_3000,Mistral SFT 3K,diagnosis_tail,74,Dermatitis/conjunctivitis,50,0.86,0.82,0.040000000000000036,0.0,0.09999999999999998
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,41,Ingestion,50,0.94,0.94,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,42,Aspiration,50,0.86,0.86,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,46,Electrical burn,50,0.88,0.86,0.020000000000000018,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,47,"Burn, not specified",50,0.68,0.66,0.020000000000000018,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,48,Scald burn,50,0.86,0.88,-0.020000000000000018,-0.06000000000000005,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,49,Chemical burn,50,0.92,0.9,0.020000000000000018,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,50,Amputation,50,1.0,0.98,0.020000000000000018,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,51,Thermal burn,50,0.78,0.78,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,52,Concussion,50,0.96,0.92,0.039999999999999925,0.0,0.09999999999999998
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,53,Contusion/abrasion,50,0.76,0.72,0.040000000000000036,0.0,0.09999999999999998
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,54,Crushing injury,50,0.94,0.92,0.019999999999999907,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,55,Dislocation,50,0.96,0.96,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,56,Foreign body,50,0.94,0.98,-0.040000000000000036,-0.12,0.039999999999999925
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,57,Fracture,50,0.9,0.86,0.040000000000000036,0.0,0.10000000000000009
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,58,Hematoma,50,0.84,0.88,-0.040000000000000036,-0.12,0.040000000000000036
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,59,Laceration,50,0.88,0.88,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,60,Dental injury,50,0.94,0.92,0.019999999999999907,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,61,Nerve damage,50,0.82,0.84,-0.020000000000000018,-0.06000000000000005,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,62,Internal injury,50,0.84,0.78,0.05999999999999994,0.0,0.14
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,63,Puncture,50,0.86,0.86,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,64,Strain/sprain,50,0.9,0.9,0.0,-0.05999999999999994,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,65,Anoxia,50,0.9,0.92,-0.020000000000000018,-0.06000000000000005,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,66,Hemorrhage,50,0.84,0.82,0.020000000000000018,0.0,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,67,Electric shock,50,0.88,0.9,-0.020000000000000018,-0.06000000000000005,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,68,Poisoning,50,0.84,0.84,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,69,Submersion,50,0.94,0.94,0.0,0.0,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,71,Unknown/not stated,50,0.6,0.58,0.020000000000000018,-0.040000000000000036,0.09999999999999998
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,72,Avulsion,50,0.98,1.0,-0.020000000000000018,-0.06000000000000005,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,73,Radiation injury,50,0.84,0.8,0.039999999999999925,0.0,0.09999999999999998
+tfidf_logreg_6000,TF-IDF + logistic regression,marker_only,74,Dermatitis/conjunctivitis,50,0.88,0.88,0.0,-0.05999999999999994,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,41,Ingestion,50,0.94,0.76,0.17999999999999994,0.06000000000000005,0.29999999999999993
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,42,Aspiration,50,0.86,0.86,0.0,-0.05999999999999994,0.06000000000000005
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,46,Electrical burn,50,0.88,0.58,0.30000000000000004,0.16000000000000003,0.43999999999999995
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,47,"Burn, not specified",50,0.68,0.68,0.0,-0.09999999999999998,0.08000000000000007
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,48,Scald burn,50,0.86,0.88,-0.020000000000000018,-0.06000000000000005,0.0
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,49,Chemical burn,50,0.92,0.48,0.44000000000000006,0.29999999999999993,0.58
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,50,Amputation,50,1.0,0.72,0.28,0.16000000000000003,0.4
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,51,Thermal burn,50,0.78,0.76,0.020000000000000018,-0.07999999999999996,0.1399999999999999
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,52,Concussion,50,0.96,0.14,0.82,0.72,0.92
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,53,Contusion/abrasion,50,0.76,0.26,0.5,0.34,0.6599999999999999
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,54,Crushing injury,50,0.94,0.28,0.6599999999999999,0.54,0.78
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,55,Dislocation,50,0.96,0.32,0.6399999999999999,0.5,0.78
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,56,Foreign body,50,0.94,0.84,0.09999999999999998,-0.020000000000000018,0.21999999999999997
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,57,Fracture,50,0.9,0.18,0.72,0.6,0.8400000000000001
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,58,Hematoma,50,0.84,0.38,0.45999999999999996,0.29999999999999993,0.62
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,59,Laceration,50,0.88,0.44,0.44,0.29999999999999993,0.5800000000000001
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,60,Dental injury,50,0.94,0.68,0.2599999999999999,0.15949999999999995,0.38049999999999956
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,61,Nerve damage,50,0.82,0.52,0.29999999999999993,0.17999999999999994,0.44
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,62,Internal injury,50,0.84,0.48,0.36,0.24,0.49999999999999994
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,63,Puncture,50,0.86,0.62,0.24,0.12,0.38
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,64,Strain/sprain,50,0.9,0.32,0.5800000000000001,0.43999999999999995,0.7000000000000001
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,65,Anoxia,50,0.9,0.84,0.06000000000000005,0.0,0.1399999999999999
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,66,Hemorrhage,50,0.84,0.66,0.17999999999999994,0.020000000000000018,0.32000000000000006
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,67,Electric shock,50,0.88,0.66,0.21999999999999997,0.09999999999999998,0.33999999999999997
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,68,Poisoning,50,0.84,0.78,0.05999999999999994,0.0,0.1399999999999999
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,69,Submersion,50,0.94,0.96,-0.020000000000000018,-0.09999999999999998,0.040000000000000036
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,71,Unknown/not stated,50,0.6,0.44,0.15999999999999998,0.06000000000000005,0.26
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,72,Avulsion,50,0.98,0.3,0.6799999999999999,0.54,0.8
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,73,Radiation injury,50,0.84,0.8,0.039999999999999925,0.0,0.09999999999999998
+tfidf_logreg_6000,TF-IDF + logistic regression,diagnosis_tail,74,Dermatitis/conjunctivitis,50,0.88,0.82,0.06000000000000005,-0.020000000000000018,0.15999999999999992

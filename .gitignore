@@ -1,0 +1,32 @@
+# Credentials and local configuration
+.env
+.env.*
+*.key
+*secret*
+*token*.txt
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+
+# Restricted or generated row-level artifacts
+data/neiss_temporal_2021_2025/
+NEISS_*.xlsx
+NEISS_*.XLSX
+**/api_responses.jsonl
+**/test_results.csv
+**/validation_results.csv
+**/checkpoint-*/
+**/*.safetensors
+**/*.joblib
+
+# Figure raster exports and local logs
+figures/*.png
+*.log
+.DS_Store
+Thumbs.db

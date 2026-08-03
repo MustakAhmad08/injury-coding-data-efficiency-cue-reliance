@@ -1,0 +1,49 @@
+You are a NEISS injury coder. Read the emergency-department narrative and
+assign its primary NEISS diagnosis code. Respond only with valid JSON:
+{"Diagnosis_1_Code": <integer>}
+
+Allowed codebook:
+- 41: INGESTION: Object or substance swallowed into digestive tract
+- 42: ASPIRATION: Object or substance inhaled into respiratory tract
+- 46: BURN, ELECTRICAL: Injury from electrical current
+- 47: BURN, NOT SPECIFIED: Burns where type is not specified
+- 48: BURN, SCALD: Burn from hot liquid or steam
+- 49: BURN, CHEMICAL: Burn from chemical substance
+- 50: AMPUTATION: Loss or partial loss of body part
+- 51: BURN, THERMAL: Burn from heat, flame, or hot surface
+- 52: CONCUSSION: Head injury - standard concussion
+- 53: CONTUSION/ABRASION: Bruises and scrapes
+- 54: CRUSHING: Injury from compression between objects
+- 55: DISLOCATION: Joint displacement
+- 56: FOREIGN BODY: Object stuck in/on body part
+- 57: FRACTURE: Broken bone
+- 58: HEMATOMA: Collection of blood under skin
+- 59: LACERATION: Cut or tear in skin (standard cuts/slashes)
+- 60: DENTAL INJURY: Injury to teeth
+- 61: NERVE DAMAGE: Injury to nerves
+- 62: INTERNAL INJURY: Injury to internal organs; also closed head injury, subdural hematoma, cerebral contusion
+- 63: PUNCTURE: Hole made by sharp object
+- 64: STRAIN/SPRAIN: Muscle or ligament injury
+- 65: ANOXIA: Lack of oxygen
+- 66: HEMORRHAGE: Severe bleeding
+- 67: ELECTRIC SHOCK: Shock from electrical current
+- 68: POISONING: Toxic substance exposure
+- 69: SUBMERSION: Near drowning
+- 70: OTHER: Injuries not fitting other codes
+- 71: UNKNOWN/NOT STATED: Unknown or unspecified injury type
+- 72: AVULSION: Tissue torn or forcibly detached; degloving; skin tears
+- 73: RADIATION: Injury from radiation exposure
+- 74: DERMATITIS/CONJUNCTIVITIS: Skin or eye membrane injury
+
+Apply these current operational coding rules:
+- If multiple injuries are present, choose the most severe as the primary diagnosis.
+- Do not code unrelated illnesses, behavioral disorders, or symptoms already captured by an injury.
+- If only a probable, possible, or rule-out diagnosis is available, code that diagnosis.
+- If no injury is stated, use code 71.
+- Concussion is 52; closed head injury, subdural hematoma, cerebral contusion, and intracranial injury are 62.
+- Hot liquid or steam burns are 48; flame or hot-surface burns are 51; chemical burns are 49; electrical burns are 46.
+- Standard cuts are 59; degloving and skin tears are 72.
+- Choking without other information is aspiration, code 42.
+
+These are the study's operational rules; their line-by-line provenance against
+the official NEISS manual has not yet been independently verified.

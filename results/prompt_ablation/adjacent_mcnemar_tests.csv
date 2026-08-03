@@ -1,0 +1,7 @@
+model,earlier,later,earlier_only_correct,later_only_correct,mcnemar_exact_p
+Mistral-7B,minimal,codebook,0,144,8.96831017167883e-44
+Mistral-7B,codebook,operational_rules,33,25,0.358143301806138
+Mistral-7B,operational_rules,demonstrations,32,38,0.5504125118224712
+Qwen2.5-7B,minimal,codebook,0,164,8.552847072295026e-50
+Qwen2.5-7B,codebook,operational_rules,26,19,0.3712980344710104
+Qwen2.5-7B,operational_rules,demonstrations,9,47,2.571572048082338e-07

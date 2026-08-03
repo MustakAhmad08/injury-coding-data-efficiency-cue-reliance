@@ -1,0 +1,26 @@
+{
+  "inputs": {
+    "results/primary/model_summary.csv": "afe1b5cbe56c6a42f322899d2aeed62a3052fa54eef1d9989248d106d06c6d68",
+    "results/primary/bootstrap_95ci.csv": "d3608061e6156bdfe0cf1f538f8500b4ee6afd8aefa4407568422c4fef35d4c0",
+    "results/cue_masking/cue_reliance_summary.csv": "96d740f87c2ec6302f6945f250839c759bc45479291f0dfa8629b7d5ad1f817b",
+    "results/contrasts/contrast_metrics.csv": "4a28b2bd81170a580429b5b9d43ea170b24d8fe7ccd76615935ce4b78bd1d5a6"
+  },
+  "outputs": [
+    "figures/experimental_design_schematic.svg",
+    "figures/experimental_design_schematic.pdf",
+    "figures/experimental_design_schematic.png",
+    "figures/model_comparison_forest.svg",
+    "figures/model_comparison_forest.pdf",
+    "figures/model_comparison_forest.png",
+    "figures/cue_masking_effects.svg",
+    "figures/cue_masking_effects.pdf",
+    "figures/cue_masking_effects.png",
+    "figures/natural_contrast_heatmap.svg",
+    "figures/natural_contrast_heatmap.pdf",
+    "figures/natural_contrast_heatmap.png",
+    "figures/learning_curve_macro_f1.svg",
+    "figures/learning_curve_macro_f1.pdf",
+    "figures/learning_curve_macro_f1.png"
+  ],
+  "png_dpi": 600
+}

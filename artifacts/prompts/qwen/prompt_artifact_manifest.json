@@ -1,0 +1,38 @@
+{
+  "system_prompt_files": {
+    "minimal": {
+      "path": "system_prompt_minimal.txt",
+      "sha256": "cda21d77ccf5bc378abdb7835eee748921135ad563b07532da33e00fdb68dc2a"
+    },
+    "codebook": {
+      "path": "system_prompt_codebook.txt",
+      "sha256": "99e00da54c907df0b5252b419c2c875fd21947daf1d0baa7fb7b85f7725349d8"
+    },
+    "operational_rules": {
+      "path": "system_prompt_operational_rules.txt",
+      "sha256": "6885d8b06f7429480a6958ebb4ae36f3392a33cb2d7408ab21b1dca885f02b49"
+    },
+    "demonstrations": {
+      "path": "system_prompt_demonstrations.txt",
+      "sha256": "6885d8b06f7429480a6958ebb4ae36f3392a33cb2d7408ab21b1dca885f02b49"
+    }
+  },
+  "demonstration_messages": {
+    "path": "demonstration_messages.jsonl",
+    "sha256": "464bd219c71ae44450653cdc5acca881a6d843c8a3265e8847066922deda429a",
+    "count": 10,
+    "ordered_case_ids": [
+      210605799,
+      220206945,
+      230301840,
+      220167046,
+      231236707,
+      230627328,
+      220625808,
+      220573513,
+      220961418,
+      220868835
+    ]
+  },
+  "implementation_note": "The demonstrations condition intentionally shares the operational-rules system prompt. Its additional information is stored as ten ordered user/assistant message pairs in demonstration_messages.jsonl."
+}

@@ -1,0 +1,3 @@
+# SFT failure-analysis protocol
+
+Review each sampled failure without changing the gold label. Assign one primary linguistic pattern from: `negation`, `uncertainty`, `multiple injuries`, `implicit diagnosis`, `abbreviation`, `temporal sequence`, `rare terminology`, or `other`. Optionally assign a secondary pattern. In `review_error_cause`, record whether the error appears due to narrative ambiguity, competing injuries, coding-rule confusion, label noise, or model failure. Automated flags are review aids, not findings. Report pattern counts and representative de-identified examples after adjudication.

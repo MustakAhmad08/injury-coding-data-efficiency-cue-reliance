@@ -1,0 +1,59 @@
+{
+  "seed": 20260718,
+  "bootstrap_resamples": 1000,
+  "status": "post hoc natural-case contrast audit; human validation pending",
+  "contrasts": [
+    {
+      "contrast_id": "scald_vs_thermal_burn",
+      "code_a": 48,
+      "label_a": "Scald burn",
+      "code_b": 51,
+      "label_b": "Thermal burn"
+    },
+    {
+      "contrast_id": "electrical_burn_vs_shock",
+      "code_a": 46,
+      "label_a": "Electrical burn",
+      "code_b": 67,
+      "label_b": "Electric shock"
+    },
+    {
+      "contrast_id": "concussion_vs_internal_injury",
+      "code_a": 52,
+      "label_a": "Concussion",
+      "code_b": 62,
+      "label_b": "Internal injury"
+    },
+    {
+      "contrast_id": "laceration_vs_avulsion",
+      "code_a": 59,
+      "label_a": "Laceration",
+      "code_b": 72,
+      "label_b": "Avulsion"
+    },
+    {
+      "contrast_id": "ingestion_vs_aspiration",
+      "code_a": 41,
+      "label_a": "Ingestion",
+      "code_b": 42,
+      "label_b": "Aspiration"
+    }
+  ],
+  "models": [
+    "tfidf_logreg_6000",
+    "mistral_0shot",
+    "mistral_10shot",
+    "qwen_0shot",
+    "qwen_10shot",
+    "gpt54_0shot",
+    "gpt54_10shot",
+    "hosted_llama_0shot",
+    "hosted_llama_10shot",
+    "mistral_sft_1000",
+    "mistral_sft_3000",
+    "mistral_sft_6000",
+    "qwen_sft_1000",
+    "qwen_sft_3000",
+    "qwen_sft_6000"
+  ]
+}

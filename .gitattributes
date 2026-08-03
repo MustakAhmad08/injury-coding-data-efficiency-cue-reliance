@@ -1,0 +1,17 @@
+* text=auto
+
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+
+# Prompt hashes validate the exact saved bytes; do not normalize these files.
+artifacts/prompts/** -text
+
+*.docx binary
+*.pptx binary
+*.png binary
+*.joblib binary
+*.safetensors binary

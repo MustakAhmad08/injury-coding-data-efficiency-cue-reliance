@@ -1,0 +1,85 @@
+model_key,model,error_type,count,proportion_of_gold_secondary
+mistral_0shot,Mistral zero-shot,ordered_pair_correct,9,0.02710843373493976
+mistral_0shot,Mistral zero-shot,secondary_correct_primary_wrong,18,0.05421686746987952
+mistral_0shot,Mistral zero-shot,secondary_omitted,48,0.14457831325301204
+mistral_0shot,Mistral zero-shot,secondary_promoted_to_primary,18,0.05421686746987952
+mistral_0shot,Mistral zero-shot,swapped_pair,3,0.009036144578313253
+mistral_0shot,Mistral zero-shot,wrong_secondary_code,236,0.7108433734939759
+mistral_10shot,Mistral 10-shot,ordered_pair_correct,29,0.08734939759036145
+mistral_10shot,Mistral 10-shot,secondary_correct_primary_wrong,23,0.06927710843373494
+mistral_10shot,Mistral 10-shot,secondary_omitted,142,0.42771084337349397
+mistral_10shot,Mistral 10-shot,secondary_promoted_to_primary,28,0.08433734939759036
+mistral_10shot,Mistral 10-shot,swapped_pair,6,0.018072289156626505
+mistral_10shot,Mistral 10-shot,wrong_secondary_code,104,0.3132530120481928
+qwen_0shot,Qwen zero-shot,ordered_pair_correct,20,0.060240963855421686
+qwen_0shot,Qwen zero-shot,secondary_correct_primary_wrong,17,0.05120481927710843
+qwen_0shot,Qwen zero-shot,secondary_omitted,74,0.22289156626506024
+qwen_0shot,Qwen zero-shot,secondary_promoted_to_primary,33,0.09939759036144578
+qwen_0shot,Qwen zero-shot,swapped_pair,4,0.012048192771084338
+qwen_0shot,Qwen zero-shot,wrong_secondary_code,184,0.5542168674698795
+qwen_10shot,Qwen 10-shot,ordered_pair_correct,48,0.14457831325301204
+qwen_10shot,Qwen 10-shot,secondary_correct_primary_wrong,14,0.04216867469879518
+qwen_10shot,Qwen 10-shot,secondary_omitted,61,0.18373493975903615
+qwen_10shot,Qwen 10-shot,secondary_promoted_to_primary,42,0.12650602409638553
+qwen_10shot,Qwen 10-shot,swapped_pair,9,0.02710843373493976
+qwen_10shot,Qwen 10-shot,wrong_secondary_code,158,0.4759036144578313
+gpt54_0shot,GPT-5.4 zero-shot,ordered_pair_correct,81,0.24397590361445784
+gpt54_0shot,GPT-5.4 zero-shot,secondary_correct_primary_wrong,29,0.08734939759036145
+gpt54_0shot,GPT-5.4 zero-shot,secondary_omitted,55,0.16566265060240964
+gpt54_0shot,GPT-5.4 zero-shot,secondary_promoted_to_primary,55,0.16566265060240964
+gpt54_0shot,GPT-5.4 zero-shot,swapped_pair,19,0.0572289156626506
+gpt54_0shot,GPT-5.4 zero-shot,wrong_secondary_code,93,0.28012048192771083
+gpt54_10shot,GPT-5.4 10-shot,ordered_pair_correct,117,0.35240963855421686
+gpt54_10shot,GPT-5.4 10-shot,secondary_correct_primary_wrong,23,0.06927710843373494
+gpt54_10shot,GPT-5.4 10-shot,secondary_omitted,69,0.20783132530120482
+gpt54_10shot,GPT-5.4 10-shot,secondary_promoted_to_primary,43,0.12951807228915663
+gpt54_10shot,GPT-5.4 10-shot,swapped_pair,32,0.0963855421686747
+gpt54_10shot,GPT-5.4 10-shot,wrong_secondary_code,48,0.14457831325301204
+hosted_llama_0shot,Hosted Llama zero-shot,ordered_pair_correct,27,0.08132530120481928
+hosted_llama_0shot,Hosted Llama zero-shot,secondary_correct_primary_wrong,16,0.04819277108433735
+hosted_llama_0shot,Hosted Llama zero-shot,secondary_omitted,79,0.23795180722891565
+hosted_llama_0shot,Hosted Llama zero-shot,secondary_promoted_to_primary,33,0.09939759036144578
+hosted_llama_0shot,Hosted Llama zero-shot,swapped_pair,4,0.012048192771084338
+hosted_llama_0shot,Hosted Llama zero-shot,wrong_secondary_code,173,0.5210843373493976
+hosted_llama_10shot,Hosted Llama 10-shot,ordered_pair_correct,56,0.1686746987951807
+hosted_llama_10shot,Hosted Llama 10-shot,secondary_correct_primary_wrong,18,0.05421686746987952
+hosted_llama_10shot,Hosted Llama 10-shot,secondary_omitted,114,0.3433734939759036
+hosted_llama_10shot,Hosted Llama 10-shot,secondary_promoted_to_primary,40,0.12048192771084337
+hosted_llama_10shot,Hosted Llama 10-shot,swapped_pair,14,0.04216867469879518
+hosted_llama_10shot,Hosted Llama 10-shot,wrong_secondary_code,90,0.2710843373493976
+mistral_sft_1000,Mistral SFT 1K,ordered_pair_correct,72,0.21686746987951808
+mistral_sft_1000,Mistral SFT 1K,secondary_correct_primary_wrong,30,0.09036144578313253
+mistral_sft_1000,Mistral SFT 1K,secondary_omitted,93,0.28012048192771083
+mistral_sft_1000,Mistral SFT 1K,secondary_promoted_to_primary,51,0.1536144578313253
+mistral_sft_1000,Mistral SFT 1K,swapped_pair,3,0.009036144578313253
+mistral_sft_1000,Mistral SFT 1K,wrong_secondary_code,83,0.25
+mistral_sft_3000,Mistral SFT 3K,ordered_pair_correct,192,0.5783132530120482
+mistral_sft_3000,Mistral SFT 3K,secondary_correct_primary_wrong,22,0.06626506024096386
+mistral_sft_3000,Mistral SFT 3K,secondary_omitted,60,0.18072289156626506
+mistral_sft_3000,Mistral SFT 3K,secondary_promoted_to_primary,20,0.060240963855421686
+mistral_sft_3000,Mistral SFT 3K,swapped_pair,20,0.060240963855421686
+mistral_sft_3000,Mistral SFT 3K,wrong_secondary_code,18,0.05421686746987952
+mistral_sft_6000,Mistral SFT 6K,ordered_pair_correct,154,0.463855421686747
+mistral_sft_6000,Mistral SFT 6K,secondary_correct_primary_wrong,20,0.060240963855421686
+mistral_sft_6000,Mistral SFT 6K,secondary_omitted,81,0.24397590361445784
+mistral_sft_6000,Mistral SFT 6K,secondary_promoted_to_primary,26,0.0783132530120482
+mistral_sft_6000,Mistral SFT 6K,swapped_pair,21,0.06325301204819277
+mistral_sft_6000,Mistral SFT 6K,wrong_secondary_code,30,0.09036144578313253
+qwen_sft_1000,Qwen SFT 1K,ordered_pair_correct,89,0.2680722891566265
+qwen_sft_1000,Qwen SFT 1K,secondary_correct_primary_wrong,26,0.0783132530120482
+qwen_sft_1000,Qwen SFT 1K,secondary_omitted,126,0.3795180722891566
+qwen_sft_1000,Qwen SFT 1K,secondary_promoted_to_primary,37,0.11144578313253012
+qwen_sft_1000,Qwen SFT 1K,swapped_pair,8,0.024096385542168676
+qwen_sft_1000,Qwen SFT 1K,wrong_secondary_code,46,0.13855421686746988
+qwen_sft_3000,Qwen SFT 3K,ordered_pair_correct,170,0.5120481927710844
+qwen_sft_3000,Qwen SFT 3K,secondary_correct_primary_wrong,12,0.03614457831325301
+qwen_sft_3000,Qwen SFT 3K,secondary_omitted,82,0.2469879518072289
+qwen_sft_3000,Qwen SFT 3K,secondary_promoted_to_primary,25,0.07530120481927711
+qwen_sft_3000,Qwen SFT 3K,swapped_pair,12,0.03614457831325301
+qwen_sft_3000,Qwen SFT 3K,wrong_secondary_code,31,0.09337349397590361
+qwen_sft_6000,Qwen SFT 6K,ordered_pair_correct,187,0.5632530120481928
+qwen_sft_6000,Qwen SFT 6K,secondary_correct_primary_wrong,13,0.0391566265060241
+qwen_sft_6000,Qwen SFT 6K,secondary_omitted,73,0.21987951807228914
+qwen_sft_6000,Qwen SFT 6K,secondary_promoted_to_primary,18,0.05421686746987952
+qwen_sft_6000,Qwen SFT 6K,swapped_pair,22,0.06626506024096386
+qwen_sft_6000,Qwen SFT 6K,wrong_secondary_code,19,0.0572289156626506
