@@ -1,0 +1,31 @@
+diag1,diagnosis_category,n,changed,spans
+41,Ingestion,50,35,63
+42,Aspiration,50,22,27
+46,Electrical burn,50,49,79
+47,"Burn, not specified",50,34,66
+48,Scald burn,50,50,103
+49,Chemical burn,50,43,60
+50,Amputation,50,49,79
+51,Thermal burn,50,48,78
+52,Concussion,50,50,55
+53,Contusion/abrasion,50,45,56
+54,Crushing injury,50,49,72
+55,Dislocation,50,46,50
+56,Foreign body,50,21,26
+57,Fracture,50,44,56
+58,Hematoma,50,50,71
+59,Laceration,50,49,63
+60,Dental injury,50,21,30
+61,Nerve damage,50,5,9
+62,Internal injury,50,32,46
+63,Puncture,50,42,56
+64,Strain/sprain,50,46,51
+65,Anoxia,50,13,16
+66,Hemorrhage,50,28,43
+67,Electric shock,50,45,61
+68,Poisoning,50,34,48
+69,Submersion,50,42,64
+71,Unknown/not stated,50,3,4
+72,Avulsion,50,37,49
+73,Radiation injury,50,33,57
+74,Dermatitis/conjunctivitis,50,26,27

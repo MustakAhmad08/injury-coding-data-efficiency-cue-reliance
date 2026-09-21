@@ -1,0 +1,11 @@
+{
+  "bootstrap_resamples": 1000,
+  "seed": 20260718,
+  "case_count": 1500,
+  "holm_family": "Six encoder-seed versus reference comparisons (3 seeds x TF-IDF/Qwen). Separate from the original 105 comparisons.",
+  "inference": "McNemar tests accuracy; bootstrap differences concern macro-F1. Intervals are unadjusted and do not combine training-seed and test-sampling uncertainty. Non-significance is not equivalence.",
+  "reference_prediction_sha256": {
+    "tfidf": "d3c1e0c1b597f4042851a4fdeae9fa9ee8b94ea6bb5c428a601e27cae82f8205",
+    "qwen": "4264593783324b31c6ed3ba900bee7277fca5ce782b90346016f61a956ac169c"
+  }
+}

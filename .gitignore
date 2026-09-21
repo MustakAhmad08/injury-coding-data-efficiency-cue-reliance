@@ -30,3 +30,7 @@ figures/*.png
 *.log
 .DS_Store
 Thumbs.db
+
+# Private analysis data and generated training outputs
+**/local/
+methods_runs/

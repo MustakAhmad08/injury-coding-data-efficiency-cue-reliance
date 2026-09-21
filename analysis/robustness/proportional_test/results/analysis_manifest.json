@@ -1,0 +1,34 @@
+{
+  "test_sha256": "ea37fd2152c1b9805746463cf454614811c322b437d3b5cc14dffd55a89edb9f",
+  "prediction_sha256": {
+    "tfidf_logreg_6000": {
+      "new": "f9001d58740d0df9e5ed046086bd737baee909be153a2e11f680b8c62180786e",
+      "balanced": "d3c1e0c1b597f4042851a4fdeae9fa9ee8b94ea6bb5c428a601e27cae82f8205"
+    },
+    "qwen_sft_6000": {
+      "new": "a080ad893cdd50137cc48c231423edfd245197b581a9d7ae94afdc8c6a6de3d0",
+      "balanced": "4264593783324b31c6ed3ba900bee7277fca5ce782b90346016f61a956ac169c"
+    },
+    "mistral_sft_3000": {
+      "new": "025649d7d9ce194cd2fbfedf0b71e5b9bdbd792faa99b6c4f15876377d496c04",
+      "balanced": "ec94089e629d8f06b9b31ce10665a8008fd29662baa880077cfe844f749bae68"
+    },
+    "roberta_seed_20260718": {
+      "new": "7675557a615781f5298b5735c2b89a51061fdaec75d57bcf0394af1af8a3455c",
+      "balanced": "fccb4e8e07eed3f5aa402302bc30920fe943eb9a02aefbee2d5ef9bb84d720a7"
+    },
+    "roberta_seed_20260719": {
+      "new": "2746880b4b16113595f12c372c9b4ecbccb987f54565fd02144d8fd54b0d7caf",
+      "balanced": "23efa4875256a5e077904141311c1300c9b0c21b8538d7001e28ed6faf175988"
+    },
+    "roberta_seed_20260720": {
+      "new": "37ac5ee2587c6fb4cfb2f350d0dbcded8d6a9fab7ad985950d655baf715e90d3",
+      "balanced": "e4d5b63e7fd3a185315e07fe842a4de1f4584f022f9f5d5d652f91f3008eb62f"
+    }
+  },
+  "bootstrap_seed": 20260918,
+  "bootstrap_resamples": 1000,
+  "bootstrap": "Shared within-class resamples with fixed proportional quotas, conditional on sample design and fitted models; intervals are unadjusted descriptive intervals, not simultaneous tests. No class-prevalence or training-seed uncertainty included.",
+  "macro": "Supported-label macro averages 28 classes; fixed30 macro averages all 30 using zero_division=0. Zero-support class recall is unavailable.",
+  "script_sha256": "ff2ae2c3de942f7c4a82a48992fd2ae39843a6018f783b3c31021acc29884ce0"
+}

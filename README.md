@@ -1,95 +1,46 @@
-# NEISS Injury Diagnosis Classification
+# NEISS Diagnosis Classification
 
-Anonymous reproducibility package for a 30-class primary-diagnosis coding study
-using National Electronic Injury Surveillance System (NEISS) emergency-
-department narratives.
+A temporal benchmark for classifying short injury-surveillance narratives into 30 primary-diagnosis categories. The repository compares TF-IDF logistic regression, fine-tuned RoBERTa, prompted language models, and QLoRA-adapted Qwen and Mistral.
 
-The benchmark uses a prespecified temporal design: 2021--2023 for training,
-2024 for development, and a locked, class-balanced 2025 test set. It compares
-TF--IDF logistic regression, zero- and 10-shot prompting, and QLoRA supervised
-fine-tuning of Mistral-7B-Instruct-v0.3 and Qwen2.5-7B-Instruct at 1K, 3K, and
-6K training examples.
+**Start here:** [results](docs/RESULTS.md) · [reproduction](docs/REPRODUCIBILITY.md) · [experimental settings](docs/EXPERIMENT_SETTINGS.md) · [data access](data/README.md).
 
-## What is included
+## Study design
 
-- training, inference, prompting, baseline, and evaluation code;
-- frozen local-model experiment configuration and random seed;
-- exact prompt-condition artifacts and ordered demonstrations;
-- aggregate, paired-test, and per-diagnosis results;
-- post-hoc validation-analysis outputs;
-- scripts and notebooks for the publication figures.
+Training uses 2021–2023 records (6,000); development uses 2024 (300); the balanced 2025 test contains 1,500 records, 50 per category. Training subsets of 1K, 3K, and 6K are nested. A separate, disjoint 1,500-case proportional test approximates the unweighted class distribution among 410,201 eligible 2025 source records. Neither test establishes national injury prevalence or prospective deployment performance.
 
-Raw NEISS workbooks, derived narrative-level splits, case-level model outputs,
-API responses, credentials, checkpoints, and adapter weights are intentionally
-excluded. The only narrative-level exception is the fixed set of ten
-de-identified demonstrations required to reconstruct the prompting condition.
-See [data/README.md](data/README.md).
+The primary model seed is **20260718**, including RoBERTa. Two additional RoBERTa seeds are supplementary. Its learning rate was selected using three-seed development means; the primary reporting seed was aligned after evaluation, not selected to maximize test performance. Qwen and Mistral training-size comparisons remain single-seed observations.
 
-## Repository structure
+## Repository map
 
-```text
-.
-|-- Injury_LLM_SFT.py       # Local QLoRA training and inference
-|-- configs/                # Frozen experiment matrix
-|-- scripts/                # Data, model, evaluation, and figure CLIs
-|-- artifacts/prompts/      # Exact prompt-ablation artifacts
-|-- data/                   # Data-access and reconstruction instructions
-|-- results/                # Aggregate and per-code results (no narratives)
-|-- figures/                # Vector publication figures
-|-- notebooks/              # One notebook per publication figure
-|-- docs/                   # Diagnosis inventory and reproducibility guide
-`-- tests/                  # Static release-integrity check
-```
+| Directory | Contents |
+|---|---|
+| `methods/roberta/` | Encoder training, checkpoint selection, evaluation, and aggregate results |
+| `Injury_LLM_SFT.py`, `scripts/` | QLoRA, TF-IDF, prompted/hosted evaluation, dataset preparation, statistics, and figures |
+| [analysis/data_quality/](analysis/data_quality/README.md) | Dataset composition, source distribution, and label audit |
+| [analysis/robustness/](analysis/robustness/README.md) | Proportional-test evaluation and diagnosis-term masking |
+| [analysis/error_analysis/](analysis/error_analysis/README.md) | Secondary-diagnosis subgroup and qualitative error studies |
+| `configs/`, `artifacts/prompts/` | Recorded settings and exact prompt artifacts |
+| `results/` | Baseline comparison, paired tests, prompt/cue analyses, and other aggregate outputs |
+| `docs/`, `data/` | Methods, reproduction instructions, source access, and reference fingerprints |
+| `figures/`, `notebooks/` | Publication figures and figure-generation entry points |
+| `tests/` | Repository integrity and analysis checks |
 
-## Installation
+The [analysis guide](analysis/README.md) links each study to its published outputs and explains the file conventions. Each study keeps its code and `results/` together.
 
-Python 3.10 or newer is recommended.
+## Quick validation
 
 ```bash
-python -m venv .venv
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+python tests/verify_v2.py
 ```
 
-Local QLoRA runs require a CUDA-capable GPU and a compatible PyTorch build.
-Hosted evaluations require the corresponding provider credentials, supplied
-only through environment variables.
+This uses only published aggregate files and Python's standard library. Training and inference require additional dependencies and data; see the reproduction guide. Static validation is not an independent numerical replication.
 
-## Quick checks
+## Data and model availability
 
-```bash
-python tests/verify_release.py
-python scripts/run_methods_condition.py qwen_sft_6000 --stage train --dry-run
-python scripts/generate_publication_figures.py
-```
+Raw workbooks, narrative-level splits, case predictions, private audit worksheets, credentials, and trained weights are not distributed. The ten fixed de-identified demonstrations are included to reconstruct prompting. Obtain source data from CPSC, reconstruct the splits, and train/download models as documented. Local data and outputs belong in ignored directories. Hosted evaluations require provider access; the mutable Llama alias cannot guarantee identical future weights.
 
-Dataset reconstruction and the complete execution order are described in
-[docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md). The locked test set is
-protected by an explicit `--confirm-locked-test` gate in evaluation commands.
+## Scope
 
-## Key reported result
+Macro-F1 supports equal-weighted category comparison; proportional accuracy and weighted F1 describe the source-record class mix. Per-category precision, recall, F1, and support clarify uneven performance. Masking and selected examples describe output behavior, not proof of contextual reasoning. The intended application is human-assisted surveillance coding, not clinical triage; labor savings, cost effectiveness, and injury prevention were not measured.
 
-Qwen SFT with 6K examples achieved the strongest observed locked-test macro F1:
-0.905 (95% diagnosis-stratified bootstrap CI 0.892--0.918). Training-size runs
-use one seed per condition and should not be interpreted as replicated scaling
-estimates.
-
-## Human label-consistency audit
-
-A blinded-independent adjudication study was not conducted. In the finalized
-100-case, single-reviewer consistency check, 94 assignments agreed with the
-narrative and six did not. The worksheet is omitted because it contains injury
-narratives; the audit protocol and limitations are documented in the paper.
-
-## Anonymity and citation
-
-This review repository intentionally contains no author or institutional
-identity. During anonymous review, cite it as the anonymous code repository
-linked from the manuscript. Author metadata, a permanent repository URL, and a
-versioned archival DOI should be added only after the review policy permits
-de-anonymization.
-
-## License
-
-Code is released under the MIT License. NEISS source data and third-party model
-artifacts remain subject to their respective terms.
+Code is MIT licensed. NEISS data and third-party models retain their own terms. Repository version: **2.0.0**.

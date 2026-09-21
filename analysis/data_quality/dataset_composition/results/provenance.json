@@ -1,0 +1,18 @@
+{
+  "input_sha256": {
+    "ablations/train_1000.csv": "7d53736ec47e92a960103d00d92d92d7770105be5bb83b795b7cabf22277706c",
+    "ablations/train_3000.csv": "a402bf71f8af3b816114ff957f8c774b9cd7515d56507d6da584b9618e6eafc5",
+    "ablations/train_6000.csv": "2d979bfc9c9f561ffbf29ff60000cd0e6b7f0fe8023737253d70a22598c305f1",
+    "validation.csv": "f39777771be6165df7e890b9fa533da33b0d772b81c659746b04dbaa131fe22c",
+    "locked_test.csv": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15"
+  },
+  "checks": "Frozen file hashes, diagnosis inventory, years, unique IDs, nested training subsets, disjoint temporal splits, manifest counts and totals verified.",
+  "totals": {
+    "train_1k": 1000,
+    "train_3k": 3000,
+    "train_6k": 6000,
+    "development": 300,
+    "test": 1500
+  },
+  "new_evaluation": false
+}

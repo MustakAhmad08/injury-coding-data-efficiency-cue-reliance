@@ -1,0 +1,85 @@
+{
+  "design": "category-balanced temporal holdout",
+  "seed": 20260718,
+  "years": {
+    "test": [
+      2025
+    ],
+    "train": [
+      2021,
+      2022,
+      2023
+    ],
+    "validation": [
+      2024
+    ]
+  },
+  "selected_diagnosis_codes": [
+    41,
+    42,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    71,
+    72,
+    73,
+    74
+  ],
+  "per_category": {
+    "test": 50,
+    "train": 200,
+    "validation": 10
+  },
+  "split_counts": {
+    "test": 1500,
+    "train": 6000,
+    "validation": 300
+  },
+  "ablation_counts": {
+    "1000": 1000,
+    "3000": 3000,
+    "6000": 6000
+  },
+  "source_sha256": {
+    "NEISS_2021.XLSX": "5476ddf233155df6f33b1ddccba8c6d4d09cd139efde82c9a64339e793a84edd",
+    "NEISS_2022.XLSX": "d36ee8e256c0246465e002db25a7c8915fa50e99aade204ce318d33ba505e100",
+    "NEISS_2023.XLSX": "81ef182da436c958bb3099e97c04a78251ae9733f5ff16cd94351c20206ccbaf",
+    "NEISS_2024.XLSX": "b5bcdedd771126b95cff913ae9e8849b7842fd96210ff96fa9466c9514f3848d",
+    "NEISS_2025.XLSX": "1cf24d2b2586d320e53e2d63049a5f32136c500efb5dda654ca531f0792ab563"
+  },
+  "output_sha256": {
+    "ablations/train_1000.csv": "7d53736ec47e92a960103d00d92d92d7770105be5bb83b795b7cabf22277706c",
+    "ablations/train_1000.jsonl": "b81c7e5ebbeed4449f5134729d756bc426de014b0e6c6807b09c4c20669a5de9",
+    "ablations/train_3000.csv": "a402bf71f8af3b816114ff957f8c774b9cd7515d56507d6da584b9618e6eafc5",
+    "ablations/train_3000.jsonl": "ed187a5f3f17c5be6508d457b5473120f0c397f62a8373ada86230e0e6c005e4",
+    "ablations/train_6000.csv": "2d979bfc9c9f561ffbf29ff60000cd0e6b7f0fe8023737253d70a22598c305f1",
+    "ablations/train_6000.jsonl": "f8b1669b11378c20a36ac173702d6fbea5da9285e15e0917777c75a6f1d1ed7b",
+    "locked_test.csv": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15",
+    "locked_test.jsonl": "be249f9e954f68f0a761659f653251b2f5c237b17b070b407efeaa9006fee834",
+    "train.csv": "a7ea73afd4983f6f8ad38efc9aecc32b5fc146bff3acc1e3d82700b43d8bea6f",
+    "train.jsonl": "93995218ac111b87bc33f0da4e3d7220e52715423219b9c5d77536a1c8b586a2",
+    "validation.csv": "f39777771be6165df7e890b9fa533da33b0d772b81c659746b04dbaa131fe22c",
+    "validation.jsonl": "dae66458559e4300667afa555415a88aff0cadde5e6ced1b09f62afa05504c68"
+  }
+}

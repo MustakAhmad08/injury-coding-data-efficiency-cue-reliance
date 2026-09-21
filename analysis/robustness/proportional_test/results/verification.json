@@ -1,0 +1,41 @@
+{
+  "n": 1500,
+  "unique_narratives": 1500,
+  "supported_classes": 28,
+  "quota_check_passed": true,
+  "test_sha256": "ea37fd2152c1b9805746463cf454614811c322b437d3b5cc14dffd55a89edb9f",
+  "case_ids_sha256": "f79ed342e99207478af884923b1b15587fb5698213ea125ff42f5c4f5bce8163",
+  "split_checks": {
+    "train.csv": {
+      "case_id_overlap": 0,
+      "exact_normalized_narrative_overlap": 0,
+      "sha256": "a7ea73afd4983f6f8ad38efc9aecc32b5fc146bff3acc1e3d82700b43d8bea6f"
+    },
+    "validation.csv": {
+      "case_id_overlap": 0,
+      "exact_normalized_narrative_overlap": 0,
+      "sha256": "f39777771be6165df7e890b9fa533da33b0d772b81c659746b04dbaa131fe22c"
+    },
+    "locked_test.csv": {
+      "case_id_overlap": 0,
+      "exact_normalized_narrative_overlap": 0,
+      "sha256": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15"
+    },
+    "ablations/train_1000.csv": {
+      "case_id_overlap": 0,
+      "exact_normalized_narrative_overlap": 0,
+      "sha256": "7d53736ec47e92a960103d00d92d92d7770105be5bb83b795b7cabf22277706c"
+    },
+    "ablations/train_3000.csv": {
+      "case_id_overlap": 0,
+      "exact_normalized_narrative_overlap": 0,
+      "sha256": "a402bf71f8af3b816114ff957f8c774b9cd7515d56507d6da584b9618e6eafc5"
+    },
+    "ablations/train_6000.csv": {
+      "case_id_overlap": 0,
+      "exact_normalized_narrative_overlap": 0,
+      "sha256": "2d979bfc9c9f561ffbf29ff60000cd0e6b7f0fe8023737253d70a22598c305f1"
+    }
+  },
+  "evaluation_verified": true
+}

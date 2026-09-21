@@ -1,0 +1,12 @@
+{
+  "seed": 20260719,
+  "checkpoint_sha256": "70d151bcfdbf9653e81abdda6f05d7d187f4372f135fb4c66fd172f3b618c07c",
+  "selection_sha256": "0686949ced47c832dcba182389425737f52fe8ba76188e464eb1cde62430e6d7",
+  "tokenization": {
+    "count": 1500,
+    "max_tokens": 156,
+    "truncated": 0
+  },
+  "test_sha256": "ea37fd2152c1b9805746463cf454614811c322b437d3b5cc14dffd55a89edb9f",
+  "predictions_sha256": "2746880b4b16113595f12c372c9b4ecbccb987f54565fd02144d8fd54b0d7caf"
+}

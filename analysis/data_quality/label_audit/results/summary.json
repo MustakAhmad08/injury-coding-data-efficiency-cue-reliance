@@ -1,0 +1,20 @@
+{
+  "source_sha256": "23098a4582959befcf7e4c7d237b71c587c8f57e06f069d515fd4065bf61ed00",
+  "n": 100,
+  "counts": {
+    "yes_yes": 87,
+    "yes_no": 3,
+    "no_yes": 4,
+    "no_no": 6
+  },
+  "observed_agreement": 0.93,
+  "expected_agreement": 0.828,
+  "cohens_kappa": 0.5930232558139539,
+  "stored_agreement_column_mismatches": 13,
+  "status": "Reviewer independence confirmed by author. Reviewer qualifications and whether the current edited worksheet preserves pre-adjudication decisions are not documented; sample not enlarged.",
+  "reviewer_independence": {
+    "confirmed": true,
+    "basis": "Author confirmation in conversation",
+    "date": "2026-09-19"
+  }
+}

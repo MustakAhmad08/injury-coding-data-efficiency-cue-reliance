@@ -1,0 +1,25 @@
+{
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.52.4",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.17.1",
+    "safetensors": "0.5.3",
+    "huggingface-hub": "0.36.2",
+    "tokenizers": "0.21.4"
+  },
+  "source_sha256": {
+    "analyze_results.py": "c50531937459b563b74ef0a1a726034c6e0216bf92ab1378429d14d923653a64",
+    "prepare_model.py": "0369f3a4298cacbecc3d847f026b7c5909fe808554ecfb04529a4d80decc9418",
+    "run_encoder.py": "dd239d1cb31d82d25698a756147c161e89ca91293da971e7344f25a3c7081d5b",
+    "sync_to_github.py": "9a2f12c884cc74bbbc1823a774c6b384a18e9c9c6fc5c263c4991bf617356c98",
+    "test_revision.py": "d02bc6852dbe2b988ea29eda522f8928a4dc410c38efe1edf105859d04916c54",
+    "write_report.py": "99abb87eaf6622d291791a096c319dd1d91bf8d0e31ed0aae8aa27b6ab99be4f"
+  },
+  "validation": "9 development fits; 3 frozen test runs; 1,500 matched cases per run; 90 per-code rows; 6 paired comparisons; saved metrics recomputed from predictions; selection/config/prediction hashes verified.",
+  "manuscript_sha256": "705ed88d54c238402f994bb7208494b9a2d8d7f9ca16a948282d5561ddc68dd2",
+  "scope": "Encoder baseline only. Original reference runs and their scores are unchanged."
+}

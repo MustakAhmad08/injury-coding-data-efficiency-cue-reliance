@@ -1,0 +1,42 @@
+{
+  "design": "Post hoc proportional-stratified sample, fixed n=1500; not an independent prospective validation.",
+  "seed": 20260918,
+  "source_sha256": "1cf24d2b2586d320e53e2d63049a5f32136c500efb5dda654ca531f0792ab563",
+  "source_n": 410201,
+  "test_n": 1500,
+  "test_sha256": "ea37fd2152c1b9805746463cf454614811c322b437d3b5cc14dffd55a89edb9f",
+  "previous_split_sha256": {
+    "train.csv": "a7ea73afd4983f6f8ad38efc9aecc32b5fc146bff3acc1e3d82700b43d8bea6f",
+    "validation.csv": "f39777771be6165df7e890b9fa533da33b0d772b81c659746b04dbaa131fe22c",
+    "locked_test.csv": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15"
+  },
+  "exclusions": {
+    "train.csv_case_ids": 0,
+    "train.csv_additional_exact_narratives": 0,
+    "validation.csv_case_ids": 0,
+    "validation.csv_additional_exact_narratives": 5,
+    "locked_test.csv_case_ids": 1500,
+    "locked_test.csv_additional_exact_narratives": 7,
+    "within_pool_duplicate_narratives": 1144
+  },
+  "available_n": 407545,
+  "allocation": "Largest remainder allocation from original 2025 counts BEFORE overlap exclusions; ties by ascending code. Random sampling without replacement within each class. No minimum per class.",
+  "target": "Unweighted observed 2025 source-record diagnosis proportions, approximated by integer quotas. Not national survey-weighted prevalence.",
+  "sampling_limitation": "Sampling within class is restricted to records with unseen exact normalized narratives; duplicate removal and previous-test exclusion may alter within-class composition. This is not a simple random sample of all source records.",
+  "zero_support_codes": [
+    46,
+    47
+  ],
+  "supported_classes": 28,
+  "models": [
+    "tfidf_logreg_6000",
+    "qwen_sft_6000",
+    "mistral_sft_3000",
+    "roberta_seed_20260718",
+    "roberta_seed_20260719",
+    "roberta_seed_20260720"
+  ],
+  "evaluation": "Unmasked narratives; frozen original prompts and checkpoints; no tuning or model selection. Accuracy and support-weighted F1 are primary; macro F1 over supported labels and fixed 30-label macro F1 are explicitly distinguished.",
+  "uncertainty": "1000 paired stratified bootstrap samples, preserving allocated class counts; conditional on this allocation and each frozen model. Three encoder seeds reported separately and as mean/sample SD.",
+  "builder_sha256": "23e0f195443415bf6a81931114bdb445511a7c0e42369387754c4103e9ffa86c"
+}

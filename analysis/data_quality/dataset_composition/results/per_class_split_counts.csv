@@ -1,0 +1,31 @@
+diagnosis_code,diagnosis_label,train_1k,train_3k,train_6k,development,test
+41,Ingestion,34,100,200,10,50
+42,Aspiration,34,100,200,10,50
+46,Electrical burn,34,100,200,10,50
+47,"Burn, not specified",34,100,200,10,50
+48,Scald burn,34,100,200,10,50
+49,Chemical burn,34,100,200,10,50
+50,Amputation,34,100,200,10,50
+51,Thermal burn,34,100,200,10,50
+52,Concussion,34,100,200,10,50
+53,Contusion/abrasion,34,100,200,10,50
+54,Crushing injury,33,100,200,10,50
+55,Dislocation,33,100,200,10,50
+56,Foreign body,33,100,200,10,50
+57,Fracture,33,100,200,10,50
+58,Hematoma,33,100,200,10,50
+59,Laceration,33,100,200,10,50
+60,Dental injury,33,100,200,10,50
+61,Nerve damage,33,100,200,10,50
+62,Internal injury,33,100,200,10,50
+63,Puncture,33,100,200,10,50
+64,Strain/sprain,33,100,200,10,50
+65,Anoxia,33,100,200,10,50
+66,Hemorrhage,33,100,200,10,50
+67,Electric shock,33,100,200,10,50
+68,Poisoning,33,100,200,10,50
+69,Submersion,33,100,200,10,50
+71,Unknown/not stated,33,100,200,10,50
+72,Avulsion,33,100,200,10,50
+73,Radiation injury,33,100,200,10,50
+74,Dermatitis/conjunctivitis,33,100,200,10,50

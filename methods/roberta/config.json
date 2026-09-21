@@ -1,0 +1,20 @@
+{
+  "model_id": "FacebookAI/roberta-base",
+  "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "train_file": "data/neiss_temporal_2021_2025/ablations/train_6000.csv",
+  "validation_file": "data/neiss_temporal_2021_2025/validation.csv",
+  "test_file": "data/neiss_temporal_2021_2025/locked_test.csv",
+  "seeds": [20260718, 20260719, 20260720],
+  "learning_rates": [0.00001, 0.00002, 0.00005],
+  "epochs": 5,
+  "batch_size": 32,
+  "eval_batch_size": 64,
+  "max_length": 512,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.06,
+  "max_grad_norm": 1.0,
+  "selection": "Highest mean development macro-F1 across three seeds, with each seed's checkpoint selected by development macro-F1; ties prefer first learning rate and earliest epoch.",
+  "precision": "bfloat16 autocast with float32 weights",
+  "timing_repeats": 3,
+  "note": "Reviewer-requested extension after the original benchmark results were known. The test set is excluded from encoder fitting, tuning and checkpoint selection. Fixed training subset; seeds vary initialization and batch order, not subset membership."
+}

@@ -27,3 +27,15 @@ The 30 evaluated labels are listed in
 [docs/DIAGNOSIS_CODES.md](../docs/DIAGNOSIS_CODES.md). Code 70 (`Other`) is
 defined by NEISS but was not represented in the benchmark because no eligible
 records occurred in the supplied annual workbooks.
+
+## Official source and recorded fingerprints
+
+Obtain annual files through the [CPSC NEISS data page](https://www.cpsc.gov/Research--Statistics/NEISS-Injury-Data). This release does not host those files. Source files may change after download; use `reference_dataset_manifest.json` to check the exact workbook versions used in the study.
+
+```bash
+python scripts/verify_dataset_fingerprints.py --source-dir /path/to/annual/workbooks
+python scripts/prepare_neiss_temporal_dataset.py --source-dir /path/to/annual/workbooks --output-dir data/neiss_temporal_2021_2025
+python scripts/verify_dataset_fingerprints.py --data-dir data/neiss_temporal_2021_2025
+```
+
+The reference manifest contains aggregate split metadata and file hashes, not narratives or case identifiers. Hash mismatches can arise from changed source workbooks or serialization/environment differences; investigate rather than replacing the reference hashes. Exact byte equality is stricter than equivalent record membership. The benchmark uses unweighted records; source frequencies and the proportional test are not survey-weighted national estimates.

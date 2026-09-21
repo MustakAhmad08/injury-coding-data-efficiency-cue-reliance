@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "seed": 20260718,
+  "test": "original balanced 2025 test",
+  "gold_category": 51,
+  "category_n": 50,
+  "examples": {
+    "A": {
+      "TF-IDF": 51,
+      "RoBERTa": 51,
+      "Qwen": 51,
+      "Mistral": 48
+    },
+    "B": {
+      "TF-IDF": 51,
+      "RoBERTa": 51,
+      "Qwen": 47,
+      "Mistral": 46
+    }
+  },
+  "input_sha256": {
+    "balanced_test": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15",
+    "TF-IDF": "d3c1e0c1b597f4042851a4fdeae9fa9ee8b94ea6bb5c428a601e27cae82f8205",
+    "RoBERTa": "fccb4e8e07eed3f5aa402302bc30920fe943eb9a02aefbee2d5ef9bb84d720a7",
+    "Qwen": "4264593783324b31c6ed3ba900bee7277fca5ce782b90346016f61a956ac169c",
+    "Mistral": "ec94089e629d8f06b9b31ce10665a8008fd29662baa880077cfe844f749bae68"
+  },
+  "selection": "Retrospective illustrative selection; no model inference or gold-label adjudication."
+}

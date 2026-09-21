@@ -1,0 +1,12 @@
+{
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "base_commit": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "adapter_sha256": "9a8b9b2fadd68c26168e578dc835bf9342a3ac3f21b7de98e5ffaacba9e9901b",
+  "max_new_tokens": 256,
+  "batch_size": 8,
+  "checkpoint_block_size": 200,
+  "greedy": true,
+  "seed": 20260718,
+  "predictions_sha256": "6b8f179530b841242de971beaadad24c29170a0fe4ee5b545c47816156bcb4de",
+  "masked_sha256": "a6844ee0541018712c265b69a4a7209bd7708bf42d3b6e9254cab4803a92900e"
+}

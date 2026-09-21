@@ -1,0 +1,11 @@
+{
+  "base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "base_commit": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "adapter_sha256": "8a77c6bea7c65f601862986961df6b9af2fcfc0bb99855655177519488b02c52",
+  "batch_size": 8,
+  "max_new_tokens": 256,
+  "greedy": true,
+  "inference_seed": 20260718,
+  "test_sha256": "ea37fd2152c1b9805746463cf454614811c322b437d3b5cc14dffd55a89edb9f",
+  "predictions_sha256": "a080ad893cdd50137cc48c231423edfd245197b581a9d7ae94afdc8c6a6de3d0"
+}

@@ -1,0 +1,22 @@
+{
+  "test_sha256": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15",
+  "prediction_sha256": {
+    "tfidf_logreg_6000": "d3c1e0c1b597f4042851a4fdeae9fa9ee8b94ea6bb5c428a601e27cae82f8205",
+    "qwen_sft_6000": "4264593783324b31c6ed3ba900bee7277fca5ce782b90346016f61a956ac169c",
+    "mistral_sft_3000": "ec94089e629d8f06b9b31ce10665a8008fd29662baa880077cfe844f749bae68",
+    "gpt54_10shot": "bc086eb1aac9add3f545ec46bcf902d2e9058cc121a18aef07d6f1729acf6ae4",
+    "roberta_seed_20260718": "fccb4e8e07eed3f5aa402302bc30920fe943eb9a02aefbee2d5ef9bb84d720a7",
+    "roberta_seed_20260719": "23efa4875256a5e077904141311c1300c9b0c21b8538d7001e28ed6faf175988",
+    "roberta_seed_20260720": "e4d5b63e7fd3a185315e07fe842a4de1f4584f022f9f5d5d652f91f3008eb62f"
+  },
+  "n_test": 1500,
+  "n_secondary_present": 332,
+  "n_repeated_codes": 78,
+  "n_distinct_codes": 254,
+  "subset_definition": "Gold secondary diagnosis present and different from the gold primary diagnosis; not selected by model outputs.",
+  "interval": "95% Wilson binomial intervals for each fixed-model proportion; descriptive, unadjusted, not training-seed uncertainty or a model comparison test.",
+  "secondary_scope": "Secondary/both-ordered/swap metrics apply only to generative models that predict both slots. Missing or invalid secondary predictions count as incorrect. Blank fields for primary-only models mean not applicable.",
+  "inference": "Retrospective descriptive subgroup analysis. Narratives are unmodified and may still contain explicit diagnosis terms. These metrics cannot distinguish lexical extraction from contextual reasoning.",
+  "new_model_inference": false,
+  "diagnosis_term_only_masking_performed": false
+}

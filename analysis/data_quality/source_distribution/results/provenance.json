@@ -1,0 +1,21 @@
+{
+  "raw_rows": 410201,
+  "missing_required_fields_removed": 0,
+  "empty_narratives_removed": 0,
+  "duplicate_case_ids_removed": 0,
+  "cleaned_rows_all_codes": 410201,
+  "out_of_inventory_counts": {},
+  "out_of_inventory_rows_removed": 0,
+  "eligible_rows_30_codes": 410201,
+  "source_file": "NEISS_2025.XLSX",
+  "source_sha256": "1cf24d2b2586d320e53e2d63049a5f32136c500efb5dda654ca531f0792ab563",
+  "reference_metrics_sha256": "da4fd08b492b254cfa6067dae32722817e97bb2af49b97846f5c61cb7216f70d",
+  "encoder_metrics_sha256": "c227e7e5671334b0c2b1f972521ba21b076acb82a6b5701bbdc6f751242351ed",
+  "builder_sha256": "e3c49322b145fe2f8309d16e9369c2f6f26b43b5612d0bf03ebee2e390df3f5e",
+  "config_sha256": "a53ce4d15ca95cbef7813bd1be073a2419bfde12e21f295e3628726091fb5bec",
+  "denominator": "Eligible unique records in the supplied 2025 workbook restricted to the frozen 30-code inventory, after the original required-field and narrative cleaning.",
+  "frequency_scope": "Unweighted source-record frequencies, not survey-weighted national injury estimates.",
+  "recall_scope": "Previously measured recall on 50 balanced-test cases per diagnosis. Encoder mean and sample SD across three training seeds on the same cases. No inference on the remaining source records.",
+  "pandas_version": "2.3.3",
+  "new_model_evaluation": false
+}

@@ -1,0 +1,60 @@
+{
+  "runs": [
+    {
+      "seed": 20260718,
+      "accuracy": 0.898,
+      "macro_f1": 0.8981962331600493,
+      "inference_seconds": [
+        0.31731220000074245,
+        0.3155765000046813,
+        0.3186461000004783
+      ],
+      "mean_inference_seconds": 0.317178266668634,
+      "examples_per_second": 4729.201706518866,
+      "peak_inference_allocated_mib": 731.26123046875,
+      "predictions_sha256": "fccb4e8e07eed3f5aa402302bc30920fe943eb9a02aefbee2d5ef9bb84d720a7"
+    },
+    {
+      "seed": 20260719,
+      "accuracy": 0.8973333333333333,
+      "macro_f1": 0.8966925739783995,
+      "inference_seconds": [
+        0.3166778000013437,
+        0.3353471000009449,
+        0.3188953999997466
+      ],
+      "mean_inference_seconds": 0.3236401000006784,
+      "examples_per_second": 4634.777952413362,
+      "peak_inference_allocated_mib": 731.26123046875,
+      "predictions_sha256": "23efa4875256a5e077904141311c1300c9b0c21b8538d7001e28ed6faf175988"
+    },
+    {
+      "seed": 20260720,
+      "accuracy": 0.8973333333333333,
+      "macro_f1": 0.8977699624599749,
+      "inference_seconds": [
+        0.31776680000621127,
+        0.3168368999977247,
+        0.3172145000062301
+      ],
+      "mean_inference_seconds": 0.317272733336722,
+      "examples_per_second": 4727.793605913332,
+      "peak_inference_allocated_mib": 731.26123046875,
+      "predictions_sha256": "e4d5b63e7fd3a185315e07fe842a4de1f4584f022f9f5d5d652f91f3008eb62f"
+    }
+  ],
+  "macro_f1_mean": 0.8975529231994747,
+  "macro_f1_sd": 0.0007749692020259811,
+  "accuracy_mean": 0.8975555555555556,
+  "accuracy_sd": 0.0003849001794597722,
+  "selection_sha256": "0686949ced47c832dcba182389425737f52fe8ba76188e464eb1cde62430e6d7",
+  "test_sha256": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15",
+  "test_tokenization": {
+    "count": 1500,
+    "max_tokens": 151,
+    "truncated": 0
+  },
+  "completed_utc": "2026-09-17T18:26:20.203801+00:00",
+  "timing_scope": "Warm GPU forward inference including dynamic collation, host-to-device transfer and argmax transfer; excludes tokenization, model loading and disk output. Three repeated passes per model; no selection uses test results.",
+  "interpretation": "SD is training-seed variability on a fixed training subset and fixed test set; it is not a test-sampling confidence interval. No best test seed is selected."
+}

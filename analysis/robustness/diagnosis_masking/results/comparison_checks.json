@@ -1,0 +1,20 @@
+[
+  {
+    "condition": "tfidf_logreg_6000",
+    "unchanged_cases": 409,
+    "unchanged_primary_prediction_disagreements": 0,
+    "original_predictions_sha256": "d3c1e0c1b597f4042851a4fdeae9fa9ee8b94ea6bb5c428a601e27cae82f8205"
+  },
+  {
+    "condition": "qwen_sft_6000",
+    "unchanged_cases": 409,
+    "unchanged_primary_prediction_disagreements": 1,
+    "original_predictions_sha256": "4264593783324b31c6ed3ba900bee7277fca5ce782b90346016f61a956ac169c"
+  },
+  {
+    "condition": "mistral_sft_3000",
+    "unchanged_cases": 409,
+    "unchanged_primary_prediction_disagreements": 1,
+    "original_predictions_sha256": "ec94089e629d8f06b9b31ce10665a8008fd29662baa880077cfe844f749bae68"
+  }
+]

@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {
-    ".py", ".md", ".json", ".jsonl", ".csv", ".txt", ".yml", ".yaml", ".ipynb"
+    ".tex", ".bib", ".py", ".md", ".json", ".jsonl", ".csv", ".txt", ".yml", ".yaml", ".ipynb"
 }
 FORBIDDEN = (
     re.compile(r"C:\\Users\\", re.I),
