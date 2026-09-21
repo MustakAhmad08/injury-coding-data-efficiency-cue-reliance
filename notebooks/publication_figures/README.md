@@ -1,7 +1,7 @@
 # Publication-figure notebooks
 
 Each notebook independently regenerates one figure from
-`scripts/generate_publication_figures.py` using the saved evaluation outputs.
+`analysis/publication_figures/generate_publication_figures.py` using the saved evaluation outputs.
 Run the notebooks from top to bottom. They export SVG, PDF, and 600-DPI PNG
 artifacts to `figures/` and verify that all three files were created.
 

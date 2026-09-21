@@ -17,7 +17,7 @@ MODELS = {
 
 
 def main() -> None:
-    project_root = Path(__file__).resolve().parent.parent
+    project_root = Path(__file__).resolve().parents[2]
 
     def repository_path(path: Path) -> str:
         """Store portable paths relative to the repository root."""

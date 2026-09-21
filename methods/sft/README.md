@@ -5,9 +5,9 @@
 Use the configured runner from the repository root:
 
 ```bash
-python scripts/run_methods_condition.py qwen_sft_6000 --stage train --dry-run
-python scripts/run_methods_condition.py qwen_sft_6000 --stage train
-python scripts/run_methods_condition.py qwen_sft_6000 --stage final-eval --confirm-locked-test
+python methods/experiments/run_methods_condition.py qwen_sft_6000 --stage train --dry-run
+python methods/experiments/run_methods_condition.py qwen_sft_6000 --stage train
+python methods/experiments/run_methods_condition.py qwen_sft_6000 --stage final-eval --confirm-locked-test
 ```
 
 The runner invokes `methods/sft/train.py` with the model, split paths, seed, and output directory from the experiment matrix. The final-evaluation flag must only be supplied after model choices are frozen. For direct CLI options in an installed research environment, run `python methods/sft/train.py --help`.

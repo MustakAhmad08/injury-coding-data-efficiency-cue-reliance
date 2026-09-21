@@ -16,7 +16,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[3]
 TEST_PATH = ROOT / "data" / "neiss_temporal_2021_2025" / "locked_test.csv"
 RUNS_DIR = ROOT / "methods_runs"
 OUTPUT_DIR = RUNS_DIR / "secondary_diagnosis_analysis"

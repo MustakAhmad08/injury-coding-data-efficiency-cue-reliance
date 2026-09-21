@@ -115,7 +115,7 @@ def infer(condition):
 
 def report():
     from analysis.error_analysis.secondary_diagnoses.analyze_distinct import code
-    from scripts.run_cue_masking_analysis import paired_drop_ci
+    from analysis.robustness.cue_masking.run_cue_masking_analysis import paired_drop_ci
     d=pd.read_csv(DATA,dtype={'case_id':str}).set_index('case_id')
     masked=pd.read_csv(HERE/'local/masked_test.csv',dtype={'case_id':str}).set_index('case_id').loc[d.index]
     changed=d.narrative.ne(masked.narrative).to_numpy()

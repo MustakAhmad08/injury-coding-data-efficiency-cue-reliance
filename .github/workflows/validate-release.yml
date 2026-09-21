@@ -28,3 +28,5 @@ jobs:
           python-version: '3.12'
       - name: Verify published release
         run: python -B tests/verify_v2.py
+      - name: Check entry points and notebook paths
+        run: python -B tests/test_entrypoints.py

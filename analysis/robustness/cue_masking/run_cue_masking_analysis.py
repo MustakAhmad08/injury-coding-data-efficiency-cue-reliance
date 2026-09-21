@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -21,7 +22,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, f1_score
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -29,6 +30,7 @@ from methods.sft.train import PeftModel, evaluate_test_set, load_model_and_token
 
 DATA = ROOT / "data" / "neiss_temporal_2021_2025" / "locked_test.csv"
 OUT = ROOT / "methods_runs" / "cue_masking"
+ADAPTER_ROOT = Path(os.environ.get("NEISS_ADAPTER_ROOT", str(ROOT / "methods_runs")))
 SEED = 20260718
 N_BOOT = 1000
 MARKER = re.compile(
@@ -38,12 +40,12 @@ MARKER = re.compile(
 MODELS = {
     "qwen_sft_6000": {
         "base": "Qwen/Qwen2.5-7B-Instruct",
-        "adapter": ROOT.parent / "injury_llm_sft_archive" / "model_artifacts" / "qwen_sft_6000",
+        "adapter": ADAPTER_ROOT / "qwen_sft_6000",
         "label": "Qwen SFT 6K",
     },
     "mistral_sft_3000": {
         "base": "mistralai/Mistral-7B-Instruct-v0.3",
-        "adapter": ROOT.parent / "injury_llm_sft_archive" / "model_artifacts" / "mistral_sft_3000",
+        "adapter": ADAPTER_ROOT / "mistral_sft_3000",
         "label": "Mistral SFT 3K",
     },
     "tfidf_logreg_6000": {

@@ -17,7 +17,7 @@ import pandas as pd
 from sklearn.metrics import f1_score
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[3]
 RUNS = ROOT / "methods_runs"
 TEST_FILE = ROOT / "data" / "neiss_temporal_2021_2025" / "locked_test.csv"
 OUTPUT_DIR = RUNS / "difficult_contrasts"

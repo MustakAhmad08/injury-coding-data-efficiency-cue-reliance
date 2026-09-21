@@ -9,8 +9,11 @@ ROOT=Path(__file__).resolve().parents[1]
 def verify_analysis_layout():
     groups = {
         'data_quality': {'dataset_composition', 'source_distribution', 'label_audit'},
-        'robustness': {'proportional_test', 'diagnosis_masking'},
-        'error_analysis': {'secondary_diagnoses', 'qualitative_errors'},
+        'robustness': {'proportional_test', 'diagnosis_masking', 'cue_masking'},
+        'error_analysis': {'secondary_diagnoses', 'qualitative_errors', 'contrasts', 'secondary_all_cases', 'error_pairs'},
+        'benchmark': set(),
+        'prompt_ablation': set(),
+        'publication_figures': set(),
     }
     analysis = ROOT / 'analysis'
     def directories(folder):
@@ -24,10 +27,13 @@ def verify_analysis_layout():
         assert actual_studies == studies, (group, actual_studies ^ studies)
         for study in studies:
             assert (analysis / group / study / 'README.md').is_file()
-            assert (analysis / group / study / 'results').is_dir()
+            if study not in {'cue_masking', 'contrasts', 'secondary_all_cases', 'error_pairs'}:
+                assert (analysis / group / study / 'results').is_dir()
 
 def main():
     verify_analysis_layout()
+    assert not (ROOT / "scripts").exists(), "Obsolete flat script directory"
+    assert (ROOT / "methods/README.md").is_file()
     assert (ROOT / "methods/sft/train.py").is_file()
     assert (ROOT / "results/error_pairs/error_pair_counts.csv").is_file()
     assert (ROOT / "results/secondary_all_cases/secondary_diagnosis_summary.csv").is_file()

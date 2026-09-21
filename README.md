@@ -18,7 +18,10 @@ The primary model seed is **20260718**, including RoBERTa. Two additional RoBERT
 |---|---|
 | `methods/roberta/` | Encoder training, checkpoint selection, evaluation, and aggregate results |
 | [methods/sft/](methods/sft/README.md) | QLoRA training and shared local generation/evaluation functions |
-| `scripts/` | Experiment runners, TF-IDF, hosted evaluation, dataset preparation, statistics, and figures |
+| [methods/](methods/README.md) | Dataset construction, experiment configuration, model training, and prediction generation |
+| [analysis/benchmark/](analysis/benchmark/README.md) | Balanced benchmark metrics, intervals, and paired tests |
+| [analysis/prompt_ablation/](analysis/prompt_ablation/README.md) | Development prompt-component comparisons |
+| [analysis/publication_figures/](analysis/publication_figures/README.md) | Figure-generation code and notebook builder |
 | [analysis/data_quality/](analysis/data_quality/README.md) | Dataset composition, source distribution, and label audit |
 | [analysis/robustness/](analysis/robustness/README.md) | Proportional-test evaluation and diagnosis-term masking |
 | [analysis/error_analysis/](analysis/error_analysis/README.md) | Secondary-diagnosis subgroup and qualitative error studies |
@@ -28,12 +31,13 @@ The primary model seed is **20260718**, including RoBERTa. Two additional RoBERT
 | `figures/`, `notebooks/` | Publication figures and figure-generation entry points |
 | `tests/` | Repository integrity and analysis checks |
 
-The [analysis guide](analysis/README.md) links each study to its published outputs and explains the file conventions. Each study keeps its code and `results/` together.
+The [method guide](methods/README.md) locates data/model execution code; the [analysis guide](analysis/README.md) locates scoring and reporting code and links to authoritative outputs.
 
 ## Quick validation
 
 ```bash
 python tests/verify_v2.py
+python -B tests/test_entrypoints.py
 ```
 
 The [release workflow](.github/workflows/validate-release.yml) runs this check on every push and pull request. This uses only published aggregate files and Python's standard library. Training and inference require additional dependencies and data; see the reproduction guide. Static validation is not an independent numerical replication.

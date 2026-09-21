@@ -62,7 +62,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-dir", type=Path,
-        default=Path(__file__).resolve().parent.parent / "data" / "neiss_temporal_2021_2025",
+        default=Path(__file__).resolve().parents[2] / "data" / "neiss_temporal_2021_2025",
     )
     parser.add_argument("--seed", type=int, default=20260718)
     parser.add_argument("--categories", type=int, default=30, choices=range(20, 31))

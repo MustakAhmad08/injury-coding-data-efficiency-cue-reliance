@@ -33,7 +33,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    project_root = Path(__file__).resolve().parent.parent
+    project_root = Path(__file__).resolve().parents[2]
     matrix = json.loads((project_root / "configs" / "experiment_matrix.json").read_text(encoding="utf-8"))
     matches = [item for item in matrix["conditions"] if item["condition_id"] == args.condition]
     if len(matches) != 1:

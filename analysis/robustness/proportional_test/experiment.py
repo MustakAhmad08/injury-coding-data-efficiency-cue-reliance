@@ -13,7 +13,7 @@ ROOT=HERE.parents[2]
 sys.path.insert(0,str(ROOT))
 import numpy as np
 import pandas as pd
-from scripts.prepare_neiss_temporal_dataset import read_year, normalized_narrative, DIAGNOSIS_LABELS
+from methods.data_preparation.prepare_neiss_temporal_dataset import read_year, normalized_narrative, DIAGNOSIS_LABELS
 SEED=20260918
 DATA=ROOT/'data/neiss_temporal_2021_2025'
 TEST=HERE/'local/proportional_test_1500.csv'

@@ -37,4 +37,4 @@ For a new run, save `python --version`, `python -m pip freeze`, and the GPU/driv
 
 ## Automated validation
 
-The [release workflow](../.github/workflows/validate-release.yml) runs only the standard-library integrity check. It does not install the training stack, access private data, or invoke model/provider APIs. Its checkout and Python setup follow the [official GitHub Actions documentation](https://github.com/actions/setup-python).
+The [release workflow](../.github/workflows/validate-release.yml) runs the standard-library integrity check and entry-point/path tests. It does not install the training stack, access private data, or invoke model/provider APIs. Its checkout and Python setup follow the [official GitHub Actions documentation](https://github.com/actions/setup-python).

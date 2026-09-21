@@ -25,7 +25,7 @@ from sklearn.metrics import accuracy_score, classification_report, f1_score
 from sklearn.pipeline import Pipeline
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data" / "neiss_temporal_2021_2025"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "methods_runs" / "tfidf_logreg_6000"
 SEED = 20260718

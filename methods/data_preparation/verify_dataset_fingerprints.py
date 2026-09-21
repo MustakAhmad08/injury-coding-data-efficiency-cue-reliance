@@ -16,7 +16,7 @@ def main():
     parser.add_argument('--data-dir',type=Path)
     args=parser.parse_args()
     if args.source_dir is None and args.data_dir is None:parser.error('Supply --source-dir and/or --data-dir')
-    root=Path(__file__).resolve().parents[1]
+    root=Path(__file__).resolve().parents[2]
     manifest=json.loads((root/'data/reference_dataset_manifest.json').read_text())
     failures=[];checked=0
     for directory,key in [(args.source_dir,'source_sha256'),(args.data_dir,'output_sha256')]:

@@ -11,6 +11,9 @@
 
 ### Organization and validation
 
+- Distributed the 17 utility scripts into method-specific and analysis-specific directories, with updated commands, imports, and navigation.
+- Cue masking now honors `NEISS_ADAPTER_ROOT`; figure notebooks locate the plotting module and outputs in their current locations.
+
 - The SFT entry point now lives under `methods/sft/train.py`, alongside the encoder method. Experiment runners and shared-function imports use this location.
 - Main-benchmark error-pair outputs and the all-cases secondary-diagnosis outputs use `results/error_pairs/` and `results/secondary_all_cases/`; the distinct subgroup remains under `analysis/error_analysis/secondary_diagnoses/`.
 

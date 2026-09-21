@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "notebooks" / "publication_figures"
 
 FIGURES = [
@@ -72,18 +72,18 @@ def find_project_root() -> Path:
     """Find the repository root whether Jupyter starts here or above it."""
     start = Path.cwd().resolve()
     for candidate in (start, *start.parents):
-        if (candidate / "scripts" / "generate_publication_figures.py").exists():
+        if (candidate / "analysis" / "publication_figures" / "generate_publication_figures.py").exists():
             return candidate
-    raise FileNotFoundError("Could not locate scripts/generate_publication_figures.py")
+    raise FileNotFoundError("Could not locate analysis/publication_figures/generate_publication_figures.py")
 
 
 ROOT = find_project_root()
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.generate_publication_figures import configure_style, FUNCTION_NAME
+from analysis.publication_figures.generate_publication_figures import configure_style, FUNCTION_NAME
 
-OUTPUT = ROOT / "figures" / "paper" / "OUTPUT_NAME"
+OUTPUT = ROOT / "figures" / "OUTPUT_NAME"
 print(f"Project root: {ROOT}")
 print(f"Output: {OUTPUT}")
 '''.replace("FUNCTION_NAME", function_name).replace("OUTPUT_NAME", output_name)

@@ -17,7 +17,7 @@ import pandas as pd
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "figures"
 SUMMARY = ROOT / "results" / "primary" / "model_summary.csv"
 BOOTSTRAP = ROOT / "results" / "primary" / "bootstrap_95ci.csv"

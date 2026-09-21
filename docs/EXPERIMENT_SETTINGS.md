@@ -33,7 +33,7 @@ The SFT recipe was held fixed; it was not selected through the encoder learning-
 
 ## Development-selected baselines
 
-TF-IDF logistic regression uses lowercase Unicode word features, sublinear term frequency, minimum document frequency 2, at most 100,000 features, and L2 regularization. The development grid covers n-grams (1,1)/(1,2) and C=0.25/1/4; selected settings are (1,2), C=4. See `scripts/run_tfidf_logreg_baseline.py`.
+TF-IDF logistic regression uses lowercase Unicode word features, sublinear term frequency, minimum document frequency 2, at most 100,000 features, and L2 regularization. The development grid covers n-grams (1,1)/(1,2) and C=0.25/1/4; selected settings are (1,2), C=4. See `methods/tfidf/run_tfidf_logreg_baseline.py`.
 
 RoBERTa-base has 124,668,702 parameters and a 30-class head; all parameters were fine-tuned on 6K. The model revision is `e2da8e2f811d1448a5b465c236feacd80ffbac7b`. Each of three learning rates (1e-5, 2e-5, 5e-5) was trained for five epochs with seeds 20260718/19/20. Each checkpoint was selected by development macro-F1; the learning rate was selected by mean development macro-F1 across seeds (5e-5). Seed 20260718 uses epoch 5. Batch size is 32, evaluation batch 64, maximum length 512, weight decay 0.01, warm-up ratio 0.06, and gradient clipping 1.0. Exact settings and selection records are in `methods/roberta/config.json` and `methods/roberta/results/validation_selection.json`.
 

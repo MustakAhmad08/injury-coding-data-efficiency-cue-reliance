@@ -27,9 +27,9 @@ def main() -> None:
     required = [
         "methods/sft/train.py",
         "configs/experiment_matrix.json",
-        "scripts/prepare_neiss_temporal_dataset.py",
-        "scripts/evaluate_methods.py",
-        "scripts/generate_publication_figures.py",
+        "methods/data_preparation/prepare_neiss_temporal_dataset.py",
+        "analysis/benchmark/evaluate_methods.py",
+        "analysis/publication_figures/generate_publication_figures.py",
         "results/primary/per_category_metrics.csv",
         "docs/DIAGNOSIS_CODES.md",
     ]

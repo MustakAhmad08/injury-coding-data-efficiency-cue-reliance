@@ -13,7 +13,7 @@ import winreg
 from openai import OpenAI
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 SCRIPT_DIR = Path(__file__).resolve().parent
 ZERO_JOB = ROOT / "methods_runs" / "gpt54_0shot" / "batch_job.json"
 CHUNK_STATE = ROOT / "methods_runs" / "gpt54_10shot" / "batch_chunks.json"

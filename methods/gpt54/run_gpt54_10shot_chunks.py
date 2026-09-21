@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OUT = PROJECT_ROOT / "methods_runs" / "gpt54_10shot"
 SOURCE = OUT / "batch_input.jsonl"
 STATE = OUT / "batch_chunks.json"
