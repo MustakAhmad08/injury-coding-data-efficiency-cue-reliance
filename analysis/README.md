@@ -1,5 +1,7 @@
 # Supplementary analyses
 
+See the [authoritative result map](../docs/RESULT_MAP.md) for source tables, commands, and required inputs.
+
 Start with the question you want to answer. Each study keeps its scripts, documentation, and published aggregate results together.
 
 ```text

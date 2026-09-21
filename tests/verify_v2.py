@@ -28,6 +28,9 @@ def verify_analysis_layout():
 
 def main():
     verify_analysis_layout()
+    assert (ROOT / "methods/sft/train.py").is_file()
+    assert (ROOT / "results/error_pairs/error_pair_counts.csv").is_file()
+    assert (ROOT / "results/secondary_all_cases/secondary_diagnosis_summary.csv").is_file()
     verify_original()
     assert (ROOT/'VERSION').read_text().strip()=='2.0.0'
     p=ROOT/'analysis/robustness/proportional_test/results'

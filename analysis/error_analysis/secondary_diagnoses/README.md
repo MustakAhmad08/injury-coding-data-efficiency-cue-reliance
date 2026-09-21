@@ -9,4 +9,4 @@ python analysis/error_analysis/secondary_diagnoses/analyze_distinct.py
 python analysis/error_analysis/secondary_diagnoses/verify_analysis.py
 ```
 
-Requires reconstructed test data, original model predictions under `methods_runs/`, and the three encoder prediction files under `methods/roberta/local/test_predictions/`. Results are in `results/`; masked subgroup comparisons are under `../../robustness/diagnosis_masking/`. The full 332-case analysis is separately retained in the root `results/secondary/` directory.
+Requires reconstructed test data, original model predictions under `methods_runs/`, and the three encoder prediction files under `methods/roberta/local/test_predictions/`. Results are in `results/`; masked subgroup comparisons are under `../../robustness/diagnosis_masking/`. The full 332-case analysis is separately retained in the root `results/secondary_all_cases/` directory.

@@ -2,18 +2,47 @@
 
 Run commands from the repository root. Use a separate working copy for new experiments: published result files record the completed study, and several analysis scripts write their outputs to the adjacent `results/` directory.
 
-## 1. Install and validate
+## 1. Choose a validation or reproduction path
 
-Create/activate a Python environment, then install a compatible CUDA PyTorch build and the requirements. Windows users activate `.venv\Scripts\Activate.ps1`; Unix users activate `.venv/bin/activate`.
+| Goal | Dependencies | Private data / GPU |
+|---|---|---|
+| Check the published release | Standard-library Python only | Neither |
+| Run the three CPU analysis unit-test suites | `configs/requirements-analysis.txt` | Neither |
+| Run encoder unit tests | Scientific packages, PyTorch, and Transformers | Neither; model libraries must be importable |
+| Reproduce training and inference | Full `requirements.txt` and task-specific setup | Reconstructed data and model/provider access; GPU for the recorded neural runs |
+
+### Release integrity
+
+Run this immediately after obtaining the repository; no package installation is needed:
 
 ```bash
-python -m venv .venv
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python tests/verify_v2.py
+python -B tests/verify_v2.py
 ```
 
-The recorded SFT environment used an RTX 5090 and CUDA 12.8. [Experimental settings](EXPERIMENT_SETTINGS.md) list package versions; installation ranges are not a complete environment lock. The integrity check needs only standard-library Python and does not rerun training.
+The [GitHub Actions workflow](../.github/workflows/validate-release.yml) runs the same check on pushes, pull requests, and manual dispatch, using Python 3.12 on Linux and Windows. Passing it validates packaged artifacts, not a numerical replication.
+
+### CPU analysis unit tests
+
+Create an isolated environment with `python -m venv .venv`, then activate it with `.venv\Scripts\Activate.ps1` on Windows or `source .venv/bin/activate` on Unix.
+
+```bash
+python -m pip install -r configs/requirements-analysis.txt
+python analysis/robustness/proportional_test/test_protocol.py
+python analysis/robustness/diagnosis_masking/test_masking.py
+python analysis/data_quality/source_distribution/test_distribution.py
+```
+
+These tests use synthetic inputs and do not train models. Encoder unit tests additionally import PyTorch and Transformers; run `python methods/roberta/test_encoder.py` in the full research environment.
+
+### Full reproduction environment
+
+In an activated research environment, install a compatible CUDA PyTorch build and the full dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Consult the [recorded environment reference](ENVIRONMENT.md) and [experimental settings](EXPERIMENT_SETTINGS.md). Installation ranges are not a complete environment lock. Continue below for data and model preparation.
 
 ## 2. Obtain and reconstruct data
 
@@ -61,7 +90,7 @@ Hosted-model scripts are `scripts/run_gpt54_evaluation.py` and `scripts/run_host
 
 ## 5. Analyses and reporting
 
-The [analysis index](../analysis/README.md) maps every analysis to commands and inputs. Run `scripts/evaluate_methods.py --help` for baseline aggregation. Proportional analysis requires all six model prediction files, including supplementary encoder seeds. Diagnosis masking uses TF-IDF, Qwen, and Mistral. Distinct secondary-diagnosis analysis additionally needs the GPT 10-shot predictions.
+The [authoritative result map](RESULT_MAP.md) links published tables to reporting commands and required inputs. The [analysis index](../analysis/README.md) organizes the supplementary studies. Run `scripts/evaluate_methods.py --help` for baseline aggregation. Proportional analysis requires all six model prediction files, including supplementary encoder seeds. Diagnosis masking uses TF-IDF, Qwen, and Mistral. Distinct secondary-diagnosis analysis additionally needs the GPT 10-shot predictions.
 
 Published aggregate results can be inspected without source data or model access. To regenerate readable proportional category tables from the included counts:
 
@@ -79,12 +108,4 @@ This recreates figures from the published aggregate tables. It covers the origin
 
 ## 6. Checks and limitations
 
-```bash
-python tests/verify_v2.py
-python methods/roberta/test_encoder.py
-python analysis/robustness/proportional_test/test_protocol.py
-python analysis/robustness/diagnosis_masking/test_masking.py
-python analysis/data_quality/source_distribution/test_distribution.py
-```
-
-Unit tests require the research dependencies. Dataset/model-dependent verification commands are documented in each analysis and cannot run from aggregate files alone. Static checks validate structure, anonymity, prompt hashes, and result consistency; they are not independent end-to-end reproduction. Hardware, library versions, data updates, model availability, and unbundled trained artifacts remain material requirements.
+Use the validation path in section 1 that matches your environment. Dataset/model-dependent verification commands are documented in each analysis and cannot run from aggregate files alone. Static checks validate structure, file-content anonymity markers, prompt hashes, and result consistency; they do not validate hosting-account anonymity or independently reproduce the experiments. Hardware, library versions, data updates, model availability, and unbundled trained artifacts remain material requirements.

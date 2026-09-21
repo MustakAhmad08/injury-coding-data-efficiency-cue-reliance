@@ -16,7 +16,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from Injury_LLM_SFT import SFT_INSTRUCTION, SYSTEM_PROMPT
+from methods.sft.train import SFT_INSTRUCTION, SYSTEM_PROMPT
 
 
 TEST_FILE = PROJECT_ROOT / "data" / "neiss_temporal_2021_2025" / "locked_test.csv"

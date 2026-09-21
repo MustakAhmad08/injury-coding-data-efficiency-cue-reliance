@@ -119,7 +119,7 @@ def infer(condition):
         del model;gc.collect();e.torch.cuda.empty_cache()
     else:
         from transformers import set_seed
-        from Injury_LLM_SFT import load_model_and_tokenizer,PeftModel,evaluate_test_set
+        from methods.sft.train import load_model_and_tokenizer,PeftModel,evaluate_test_set
         set_seed(20260718)
         base={'qwen_sft_6000':'Qwen/Qwen2.5-7B-Instruct','mistral_sft_3000':'mistralai/Mistral-7B-Instruct-v0.3'}[condition]
         adapter=Path(os.environ.get('NEISS_ADAPTER_ROOT', str(ROOT/'methods_runs')))/condition

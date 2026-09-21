@@ -25,7 +25,7 @@ FORBIDDEN = (
 
 def main() -> None:
     required = [
-        "Injury_LLM_SFT.py",
+        "methods/sft/train.py",
         "configs/experiment_matrix.json",
         "scripts/prepare_neiss_temporal_dataset.py",
         "scripts/evaluate_methods.py",

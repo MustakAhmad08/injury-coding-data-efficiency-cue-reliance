@@ -39,7 +39,7 @@ def main() -> None:
     if len(matches) != 1:
         raise ValueError(f"Unknown or duplicate condition ID: {args.condition}")
     condition = matches[0]
-    entrypoint = project_root / "Injury_LLM_SFT.py"
+    entrypoint = project_root / "methods/sft/train.py"
     selected_seed = matrix["seed"] if args.seed is None else args.seed
     output_dir = Path(condition["output_dir"])
     if selected_seed != matrix["seed"]:

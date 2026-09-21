@@ -85,7 +85,7 @@ def infer(condition):
         metadata={'pipeline_sha256':digest(ROOT/'methods_runs/tfidf_logreg_6000/tfidf_logreg_pipeline.joblib')}
     else:
         from transformers import set_seed
-        from Injury_LLM_SFT import load_model_and_tokenizer, PeftModel, evaluate_test_set
+        from methods.sft.train import load_model_and_tokenizer, PeftModel, evaluate_test_set
         set_seed(SEED)
         base={'qwen_sft_6000':'Qwen/Qwen2.5-7B-Instruct','mistral_sft_3000':'mistralai/Mistral-7B-Instruct-v0.3'}[condition]
         adapter=Path(os.environ.get('NEISS_ADAPTER_ROOT', str(ROOT/'methods_runs')))/condition

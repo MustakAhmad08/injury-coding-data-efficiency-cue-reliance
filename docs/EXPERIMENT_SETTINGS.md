@@ -29,7 +29,7 @@ The proportional test is a separate, disjoint 1,500-case sample using sampling s
 | Checkpoint selection | lowest development loss; early stopping patience 3, threshold 0 |
 | Local generation | greedy; up to 256 output tokens; inference batch 8 |
 
-The SFT recipe was held fixed; it was not selected through the encoder learning-rate sweep. Training uses formatted narrative-to-JSON examples, including structured auxiliary fields and templated rationales. The principal endpoint is primary diagnosis. Consult `Injury_LLM_SFT.py` for exact formatting and loss construction; do not infer response-only loss from the output schema.
+The SFT recipe was held fixed; it was not selected through the encoder learning-rate sweep. Training uses formatted narrative-to-JSON examples, including structured auxiliary fields and templated rationales. The principal endpoint is primary diagnosis. Consult `methods/sft/train.py` for exact formatting and loss construction; do not infer response-only loss from the output schema.
 
 ## Development-selected baselines
 
@@ -40,6 +40,8 @@ RoBERTa-base has 124,668,702 parameters and a 30-class head; all parameters were
 Primary reporting uses RoBERTa seed 20260718 to match the other models. That reporting decision was made after evaluation for alignment, not by maximizing test performance. Other seeds remain supplementary. Matching seed numbers does not equalize tuning budgets or random trajectories across architectures.
 
 ## Environment and limits
+
+The [environment reference](ENVIRONMENT.md) separates recorded package versions from validation and installation requirements.
 
 Original SFT manifests record torch 2.11.0+cu128, transformers 4.52.4, peft 0.13.2, trl 0.11.4, bitsandbytes 0.48.2, and datasets 2.21.0; hardware was an RTX 5090 with CUDA 12.8. These are recorded versions, not a complete environment lock. `requirements.txt` specifies installation ranges; a compatible CUDA-specific PyTorch installation is still required. Analysis-specific environment records are retained with the analyses. Hardware and library changes can affect results even with fixed seeds.
 

@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from Injury_LLM_SFT import PeftModel, evaluate_test_set, load_model_and_tokenizer
+from methods.sft.train import PeftModel, evaluate_test_set, load_model_and_tokenizer
 
 DATA = ROOT / "data" / "neiss_temporal_2021_2025" / "locked_test.csv"
 OUT = ROOT / "methods_runs" / "cue_masking"

@@ -1,5 +1,7 @@
 # Results and interpretation
 
+See the [authoritative result map](RESULT_MAP.md) for source tables, commands, and required inputs.
+
 ## Main model comparison
 
 All scores below use frozen models. The balanced and proportional tests each contain 1,500 records but are disjoint. The proportional sample approximates the unweighted 2025 source distribution; it is not a national prevalence estimate.

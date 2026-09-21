@@ -1,0 +1,5 @@
+# CPU dependencies for the three analysis unit-test commands in docs/REPRODUCIBILITY.md.
+# Installation ranges, not an exact snapshot of the original experiments.
+numpy>=1.26,<3
+pandas>=2.2,<3
+scikit-learn>=1.5,<2

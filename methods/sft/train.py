@@ -1019,8 +1019,8 @@ def write_run_manifest(
         json.dump(payload, stream, indent=2, default=str)
 
 def parse_args():
-    script_dir = Path(__file__).resolve().parent
-    split_dir = script_dir / "data" / "neiss_temporal_2021_2025"
+    project_root = Path(__file__).resolve().parents[2]
+    split_dir = project_root / "data" / "neiss_temporal_2021_2025"
     parser = argparse.ArgumentParser(description="Train a NEISS SFT model.")
     parser.add_argument(
         "--model-name",

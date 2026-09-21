@@ -4,6 +4,8 @@ A temporal benchmark for classifying short injury-surveillance narratives into 3
 
 **Start here:** [results](docs/RESULTS.md) · [reproduction](docs/REPRODUCIBILITY.md) · [experimental settings](docs/EXPERIMENT_SETTINGS.md) · [data access](data/README.md).
 
+See also: [v2 changes](CHANGELOG.md), [authoritative result map](docs/RESULT_MAP.md), and [recorded environments](docs/ENVIRONMENT.md).
+
 ## Study design
 
 Training uses 2021–2023 records (6,000); development uses 2024 (300); the balanced 2025 test contains 1,500 records, 50 per category. Training subsets of 1K, 3K, and 6K are nested. A separate, disjoint 1,500-case proportional test approximates the unweighted class distribution among 410,201 eligible 2025 source records. Neither test establishes national injury prevalence or prospective deployment performance.
@@ -15,7 +17,8 @@ The primary model seed is **20260718**, including RoBERTa. Two additional RoBERT
 | Directory | Contents |
 |---|---|
 | `methods/roberta/` | Encoder training, checkpoint selection, evaluation, and aggregate results |
-| `Injury_LLM_SFT.py`, `scripts/` | QLoRA, TF-IDF, prompted/hosted evaluation, dataset preparation, statistics, and figures |
+| [methods/sft/](methods/sft/README.md) | QLoRA training and shared local generation/evaluation functions |
+| `scripts/` | Experiment runners, TF-IDF, hosted evaluation, dataset preparation, statistics, and figures |
 | [analysis/data_quality/](analysis/data_quality/README.md) | Dataset composition, source distribution, and label audit |
 | [analysis/robustness/](analysis/robustness/README.md) | Proportional-test evaluation and diagnosis-term masking |
 | [analysis/error_analysis/](analysis/error_analysis/README.md) | Secondary-diagnosis subgroup and qualitative error studies |
@@ -33,7 +36,7 @@ The [analysis guide](analysis/README.md) links each study to its published outpu
 python tests/verify_v2.py
 ```
 
-This uses only published aggregate files and Python's standard library. Training and inference require additional dependencies and data; see the reproduction guide. Static validation is not an independent numerical replication.
+The [release workflow](.github/workflows/validate-release.yml) runs this check on every push and pull request. This uses only published aggregate files and Python's standard library. Training and inference require additional dependencies and data; see the reproduction guide. Static validation is not an independent numerical replication.
 
 ## Data and model availability
 
