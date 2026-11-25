@@ -1,6 +1,6 @@
-"""Evaluate prespecified difficult diagnosis pairs on aligned locked-test cases.
+"""Evaluate selected difficult diagnosis pairs on aligned locked-test cases.
 
-This is a natural-case contrast audit, not a synthetic minimal-pair experiment.
+This is a post-hoc diagnosis-pair subgroup analysis, not a synthetic minimal-pair experiment.
 It uses the existing predictions and creates a reviewer worksheet so a qualified
 co-author can verify a deterministic sample before publication.
 """

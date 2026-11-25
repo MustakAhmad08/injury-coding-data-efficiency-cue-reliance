@@ -14,3 +14,5 @@ python analysis/robustness/diagnosis_masking/run_test.py report
 ```
 
 Adapters default to `methods_runs/{condition}`; `NEISS_ADAPTER_ROOT` can override that root. See the reproduction guide for original-data/model requirements. Predictions and span audits remain private. This automated lexicon is not exhaustive or clinician-validated; incidental/negated uses may be masked, unlisted expressions may remain, and masking creates distribution shift. Neither score drops nor residual performance prove contextual reasoning. This term intervention is distinct from the marker/tail analyses under `results/cue_masking/`.
+
+The camera-ready [RoBERTa masking extension](../roberta_masking/README.md) reports all three selected seeds and is kept separate from the original three-model snapshots.

@@ -10,7 +10,7 @@ Use the linked numeric files as the published sources. Read [Results](RESULTS.md
 | RoBERTa baseline | [Per-seed summary](../methods/roberta/results/test_summary.json), [per-category metrics](../methods/roberta/results/per_category_metrics.csv), [paired comparisons](../methods/roberta/results/paired_comparisons.csv) | `python methods/roberta/analyze_results.py` | Selected encoder predictions plus reference predictions; [training protocol](../methods/roberta/README.md) |
 | Development prompt ablation | [Summary](../results/prompt_ablation/prompt_ablation_summary.csv) | `python analysis/prompt_ablation/run_prompt_component_ablation.py --stage report` | Completed development ablation runs |
 | Marker/tail cue masking | [Summary](../results/cue_masking/cue_reliance_summary.csv), [per-category results](../results/cue_masking/cue_reliance_per_category.csv) | `python analysis/robustness/cue_masking/run_cue_masking_analysis.py --stage report` | Completed original and cue-masked runs |
-| Natural contrasts | [Subset metrics](../results/contrasts/contrast_metrics.csv) | `python analysis/error_analysis/contrasts/analyze_difficult_contrasts.py` | Reconstructed narratives and predictions |
+| Diagnosis-pair subsets | [Subset metrics](../results/contrasts/contrast_metrics.csv) | `python analysis/error_analysis/contrasts/analyze_difficult_contrasts.py` | Reconstructed narratives and predictions |
 | All secondary-diagnosis cases (332) | [Summary](../results/secondary_all_cases/secondary_diagnosis_summary.csv) | `python analysis/error_analysis/secondary_all_cases/analyze_secondary_diagnosis.py` | Reconstructed test data and predictions |
 | Aggregate error pairs | [Counts](../results/error_pairs/error_pair_counts.csv) | `python analysis/error_analysis/error_pairs/prepare_error_analysis.py --prediction NAME=CSV --test-file data/neiss_temporal_2021_2025/locked_test.csv --output-dir methods_runs/error_analysis` | Repeat prediction arguments for compared models; also writes private review rows, so use ignored output storage |
 
@@ -27,14 +27,19 @@ Use the linked numeric files as the published sources. Read [Results](RESULTS.md
 | Diagnosis-term masking | [Metrics](../analysis/robustness/diagnosis_masking/results/metrics.csv), [per-category results](../analysis/robustness/diagnosis_masking/results/per_class.csv) | `python analysis/robustness/diagnosis_masking/run_test.py report` | Original and masked predictions; [prepare/infer protocol](../analysis/robustness/diagnosis_masking/README.md) |
 | Distinct secondary diagnoses (254) | [Subgroup metrics](../analysis/error_analysis/secondary_diagnoses/results/distinct_254_metrics.csv) | `python analysis/error_analysis/secondary_diagnoses/analyze_distinct.py` | Reconstructed test data and frozen predictions |
 | Qualitative errors | [Examples and interpretation](../analysis/error_analysis/qualitative_errors/README.md), [thermal-burn confusion counts](../analysis/error_analysis/qualitative_errors/results/thermal_burn_confusions.csv) | `python analysis/error_analysis/qualitative_errors/verify_examples.py` | Private selected-case record, test data, and predictions; verifier covers thermal-burn examples |
+| RoBERTa masking (three seeds) | [Nine masking rows](../analysis/robustness/roberta_masking/results/roberta_masking_summary.csv), [recorded checks](../analysis/robustness/roberta_masking/results/roberta_masking_checks.json) | `python analysis/robustness/roberta_masking/run_roberta_masking.py` | Reconstructed masked inputs, frozen checkpoints, unmasked predictions; see the [protocol](../analysis/robustness/roberta_masking/README.md) |
 
 The 332-case and 254-case secondary analyses have different denominators. Cue masking and diagnosis-term masking also use different interventions. Their outputs are separate sources, not interchangeable copies.
+
+Encoder diagnosis-pair accuracies are in [encoder_pair_accuracy.csv](../results/contrasts/encoder_pair_accuracy.csv).
+Regenerate them from included full-precision per-code recalls with
+`python analysis/error_analysis/contrasts/build_encoder_subsets.py`.
 
 ## Reports from included aggregates
 
 | Artifact | Command | Inputs |
 |---|---|---|
 | [Proportional category report](../analysis/robustness/proportional_test/PER_CATEGORY_RESULTS.md) | `python analysis/robustness/proportional_test/report_per_category.py` | Included proportional tables; requires pandas and can rewrite the per-class CSV |
-| [Publication figures](../figures/) | `python analysis/publication_figures/generate_publication_figures.py` | Included aggregate tables and plotting dependencies; covers original baseline/behavior figures |
+| [Publication figures](../figures/) | `python analysis/publication_figures/generate_publication_figures.py` | Included aggregate tables and plotting dependencies; covers the camera-ready figures including the primary encoder run; the schematic remains a historical original-benchmark supplement |
 
 Use `python tests/verify_v2.py` to check release integrity without installing scientific packages or regenerating outputs.

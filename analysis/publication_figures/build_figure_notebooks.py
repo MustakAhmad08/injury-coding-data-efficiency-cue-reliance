@@ -14,7 +14,7 @@ FIGURES = [
         "Experimental Design Schematic",
         "experimental_design",
         "experimental_design_schematic.png",
-        "Scientific overview of the temporal partitions, model-development conditions, frozen configuration, locked-test analysis, and diagnostic analyses.",
+        "Historical schematic of the original benchmark only; not used in the camera-ready manuscript and does not include the encoder extension.",
     ),
     (
         "02_model_comparison_forest.ipynb",
@@ -32,10 +32,10 @@ FIGURES = [
     ),
     (
         "04_natural_contrast_heatmap.ipynb",
-        "Natural-Contrast Heatmap",
+        "Diagnosis-Pair Subgroup Heatmap",
         "contrast_heatmap",
         "natural_contrast_heatmap.png",
-        "Accuracy on five post-hoc natural diagnosis contrasts, including the across-contrast mean.",
+        "Accuracy on five post-hoc diagnosis-pair subsets, including RoBERTa seed 20260718 and the across-subset mean.",
     ),
     (
         "05_sft_learning_curve.ipynb",

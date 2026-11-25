@@ -109,4 +109,8 @@ This recreates figures from the published aggregate tables. It covers the origin
 
 ## 6. Checks and limitations
 
-Use the validation path in section 1 that matches your environment. Dataset/model-dependent verification commands are documented in each analysis and cannot run from aggregate files alone. Static checks validate structure, file-content anonymity markers, prompt hashes, and result consistency; they do not validate hosting-account anonymity or independently reproduce the experiments. Hardware, library versions, data updates, model availability, and unbundled trained artifacts remain material requirements.
+Use the validation path in section 1 that matches your environment. Dataset/model-dependent verification commands are documented in each analysis and cannot run from aggregate files alone. Static checks validate structure, accidental machine paths/credential patterns, prompt hashes, and aggregate result consistency; they do not independently reproduce training or inference. Hardware, library versions, data updates, model availability, and unbundled trained artifacts remain material requirements.
+
+## Camera-ready additions
+
+See the [RoBERTa masking protocol](../analysis/robustness/roberta_masking/README.md). The new checks verify published aggregates and provenance, not GPU inference. Rebuild encoder subgroup accuracies from included recalls before regenerating all figures. Historical 15-condition tables remain unchanged and the encoder results are separate sources.

@@ -12,3 +12,5 @@ python methods/roberta/analyze_results.py
 ```
 
 Data reconstruction and the TF-IDF/Qwen predictions are prerequisites for paired comparisons. Local weights/predictions are not included. `results/validation_selection.json` records the selected checkpoints; `test_summary.json` records per-seed scores and encoder-only timing; `comparison_metrics.csv` and `paired_comparisons.csv` provide reference comparisons and uncertainty. Timings exclude model loading/tokenization and are not matched end-to-end speed comparisons with Qwen.
+
+The camera-ready [RoBERTa masking extension](../../analysis/robustness/roberta_masking/README.md) reports all three selected seeds and is kept separate from the original three-model snapshots.

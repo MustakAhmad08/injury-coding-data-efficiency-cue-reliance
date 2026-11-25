@@ -1,0 +1,44 @@
+{
+  "input_sha256": {
+    "locked_test.csv": "19797d36307469b7522fc21947e72c74fa76dae8264b499ef74ca91ab5044d15",
+    "marker_only.csv": "3d617b381c00f1d5bbf662b162e7683a9af962342bd3994f4293863a6d58b8e5",
+    "diagnosis_tail.csv": "23fec7dba36e6dfc8243e62b4a2c87c322997adae3d7a9e1588cfa62bc9ddf07",
+    "term_masked_test.csv": "a6844ee0541018712c265b69a4a7209bd7708bf42d3b6e9254cab4803a92900e"
+  },
+  "script_sha256": "94f2e4f24ed26d83adf244379413825924a2ba5d3da63ec56b51ede269c61cc4",
+  "checks": [
+    {
+      "seed": 20260718,
+      "checkpoint_sha256": "38185bf42a4f3d959be33681f19c17c292d8d20024fc22da3765c2b8f660368f",
+      "archived_prediction_agreement": 1500,
+      "n": 1500,
+      "term_unchanged_disagreements": 0,
+      "term_unchanged_n": 409,
+      "predictions_sha256": "e3aec9af52f374ff89215646b1e190279085b51ff00b16fb6bbe02375d642e6d"
+    },
+    {
+      "seed": 20260719,
+      "checkpoint_sha256": "70d151bcfdbf9653e81abdda6f05d7d187f4372f135fb4c66fd172f3b618c07c",
+      "archived_prediction_agreement": 1500,
+      "n": 1500,
+      "term_unchanged_disagreements": 0,
+      "term_unchanged_n": 409,
+      "predictions_sha256": "2750e0533ffae7264a54ca9b549224a8c0563ef6d673e48cc0eb18540dab9716"
+    },
+    {
+      "seed": 20260720,
+      "checkpoint_sha256": "c47def127dcef6d1eff5f81f1d1bafacec9f30498fd8a5e96fa27dd3600b42fb",
+      "archived_prediction_agreement": 1500,
+      "n": 1500,
+      "term_unchanged_disagreements": 0,
+      "term_unchanged_n": 409,
+      "predictions_sha256": "0e803d2be81ae3bc98fd2546314e5133ee541ddf09e5168a6a826dfc091fc329"
+    }
+  ],
+  "env": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "transformers": "4.52.4",
+    "gpu": "NVIDIA GeForce RTX 5090"
+  }
+}

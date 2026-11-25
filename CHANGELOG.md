@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.0 — 2026-11-25
+
+- Added post-hoc RoBERTa marker, diagnosis-tail, and diagnosis-term masking for three development-selected seeds, including distinct-254 primary accuracy and archived inference checks.
+- Preserved completed-experiment outputs and original script provenance; added a portable reproduction entry point that writes separately from published snapshots.
+- Added encoder diagnosis-pair accuracy derived from full-precision per-category results; updated forest, masking, and diagnosis-pair figures to include the primary encoder run.
+- Updated plotting code, notebook descriptions, figure hashes, and camera-ready result documentation. Original 15-condition benchmark outputs remain unchanged.
+- Added author attribution and citation metadata, corrected README navigation, and replaced anonymity-only checks with public-release integrity checks.
+- Added validation of all nine masking rows, subgroup results, provenance hashes, and figure inputs/outputs.
+- Renamed the GitHub repository to `injury-coding-data-efficiency-cue-reliance` and updated its citation and README links.
+
+This release packages existing experiments; it does not claim a new training/inference replication.
+
 ## 2.0.0
 
 ### Added

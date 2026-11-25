@@ -19,6 +19,10 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "figures"
+ENCODER = ROOT / "methods/roberta/results/comparison_metrics.csv"
+ENCODER_PAIRS = ROOT / "results/contrasts/encoder_pair_accuracy.csv"
+ROBERTA_MASKING = ROOT / "analysis/robustness/roberta_masking/results/roberta_masking_summary.csv"
+RB = "roberta_seed_20260718"
 SUMMARY = ROOT / "results" / "primary" / "model_summary.csv"
 BOOTSTRAP = ROOT / "results" / "primary" / "bootstrap_95ci.csv"
 MASKING = ROOT / "results" / "cue_masking" / "cue_reliance_summary.csv"
@@ -31,6 +35,7 @@ COLORS = {
     "GPT-5.4": "#CC79A7",
     "Hosted Llama": "#009E73",
     "TF-IDF": "#4D4D4D",
+    "RoBERTa": "#A66A00",
 }
 
 LABELS = {
@@ -48,11 +53,14 @@ LABELS = {
     "qwen_sft_1000": "Qwen SFT 1K",
     "qwen_sft_3000": "Qwen SFT 3K",
     "qwen_sft_6000": "Qwen SFT 6K",
-    "tfidf_logreg_6000": "TF-IDF + logistic regression",
+    "tfidf_logreg_6000": "TF-IDF LR",
+    RB: "RoBERTa-base",
 }
 
 
 def family(condition: str) -> str:
+    if condition.startswith("roberta"):
+        return "RoBERTa"
     if condition.startswith("qwen"):
         return "Qwen"
     if condition.startswith("mistral"):
@@ -344,37 +352,34 @@ def experimental_design() -> None:
 
 
 def model_forest() -> None:
+    mpl.rcParams.update({"ytick.labelsize": 8.0, "xtick.labelsize": 8.0, "axes.labelsize": 8.8, "axes.linewidth": 0.7})
     summary = pd.read_csv(SUMMARY)[["condition", "macro_f1"]]
     ci = pd.read_csv(BOOTSTRAP)
     ci = ci.loc[ci["metric"].eq("macro_f1"), ["condition", "ci_low", "ci_high"]]
     summary["condition"] = summary["condition"].map(public_condition)
     ci["condition"] = ci["condition"].map(public_condition)
+    enc = pd.read_csv(ENCODER).set_index("condition").loc[RB]
+    summary = pd.concat([summary, pd.DataFrame([{"condition": RB, "macro_f1": enc.macro_f1}])], ignore_index=True)
+    ci = pd.concat([ci, pd.DataFrame([{"condition": RB, "ci_low": enc.macro_f1_ci_low, "ci_high": enc.macro_f1_ci_high}])], ignore_index=True)
     data = summary.merge(ci, on="condition", validate="one_to_one").sort_values("macro_f1")
     data["label"] = data["condition"].map(LABELS)
+    assert data["label"].notna().all() and len(data) == 16
 
-    fig, ax = plt.subplots(figsize=(3.35, 5.15), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(3.35, 5.6), constrained_layout=True)
     y = np.arange(len(data))
     for i, row in data.reset_index(drop=True).iterrows():
         fam = family(row.condition)
-        marker = "D" if "sft" in row.condition else ("s" if row.condition.startswith("tfidf") else "o")
-        ax.errorbar(
-            row.macro_f1,
-            i,
-            xerr=[[row.macro_f1 - row.ci_low], [row.ci_high - row.macro_f1]],
-            fmt=marker,
-            color=COLORS[fam],
-            markeredgecolor="white",
-            markeredgewidth=0.45,
-            markersize=4.6,
-            elinewidth=1.05,
-            capsize=1.8,
-            zorder=3,
-        )
+        if row.condition.startswith("roberta"): marker = "^"
+        elif "sft" in row.condition: marker = "D"
+        elif row.condition.startswith("tfidf"): marker = "s"
+        else: marker = "o"
+        ax.errorbar(row.macro_f1, i, xerr=[[row.macro_f1 - row.ci_low], [row.ci_high - row.macro_f1]],
+                    fmt=marker, color=COLORS[fam], markeredgecolor="white", markeredgewidth=0.35,
+                    markersize=5.0 if marker == "^" else 4.3, elinewidth=1.3, capsize=3.2, capthick=1.2, zorder=3)
     ax.set_yticks(y, data["label"])
-    ax.set_xlabel("Macro F1 (95% bootstrap CI)")
-    ax.set_xlim(0.14, 0.94)
-    ax.set_xticks(np.arange(0.2, 1.0, 0.1))
-    ax.grid(axis="x", color="#D9D9D9", linewidth=0.55, zorder=0)
+    ax.set_xlabel("Macro-$F_1$ (95% bootstrap CI)")
+    ax.set_xlim(0.14, 0.94); ax.set_xticks(np.arange(0.2, 1.0, 0.1))
+    ax.grid(axis="x", color="#CFCFCF", linewidth=0.6, zorder=0)
     ax.tick_params(axis="y", length=0)
     ax.spines[["top", "right", "left"]].set_visible(False)
     for tick, cond in zip(ax.get_yticklabels(), data["condition"]):
@@ -384,65 +389,55 @@ def model_forest() -> None:
 
 
 def masking_effects() -> None:
+    mpl.rcParams.update({"ytick.labelsize": 8.0, "xtick.labelsize": 8.0, "axes.labelsize": 8.8, "axes.linewidth": 0.7})
     data = pd.read_csv(MASKING)
-    order = ["qwen_sft_6000", "mistral_sft_3000", "tfidf_logreg_6000"]
-    short = {"qwen_sft_6000": "Qwen SFT 6K", "mistral_sft_3000": "Mistral SFT 3K", "tfidf_logreg_6000": "TF-IDF + LR"}
-    fig, axes = plt.subplots(2, 1, figsize=(3.35, 3.6), constrained_layout=True)
+    rb = pd.read_csv(ROBERTA_MASKING)
+    rb = rb[(rb.seed == 20260718) & rb.variant.isin(["marker_only", "diagnosis_tail"])]
+    data = pd.concat([data, pd.DataFrame({"condition": RB, "variant": rb.variant, "macro_f1_drop": rb.macro_f1_drop,
+                                          "macro_f1_drop_ci_low": rb.f1_drop_ci_low, "macro_f1_drop_ci_high": rb.f1_drop_ci_high})],
+                     ignore_index=True)
+
+    order = ["qwen_sft_6000", "mistral_sft_3000", RB, "tfidf_logreg_6000"]
+    short = {"qwen_sft_6000": "Qwen SFT 6K", "mistral_sft_3000": "Mistral SFT 3K", RB: "RoBERTa-base", "tfidf_logreg_6000": "TF-IDF LR"}
+    fig, axes = plt.subplots(2, 1, figsize=(3.35, 4.0), constrained_layout=True)
     specs = [
         ("marker_only", "(a) Formatting-marker removal", (-0.021, 0.012), [-0.02, -0.01, 0.0, 0.01]),
-        ("diagnosis_tail", "(b) Diagnosis-tail removal", (-0.405, -0.245), [-0.40, -0.35, -0.30, -0.25]),
+        ("diagnosis_tail", "(b) Diagnosis-tail removal", (-0.475, -0.245), [-0.45, -0.40, -0.35, -0.30, -0.25]),
     ]
     for ax, (variant, title, limits, ticks) in zip(axes, specs):
         subset = data.loc[data["variant"].eq(variant)].set_index("condition").loc[order]
         y = np.arange(len(order))[::-1]
         for yy, (cond, row) in zip(y, subset.iterrows()):
-            estimate = -row.macro_f1_drop
-            low = -row.macro_f1_drop_ci_high
-            high = -row.macro_f1_drop_ci_low
-            ax.errorbar(
-                estimate,
-                yy,
-                xerr=[[estimate - low], [high - estimate]],
-                fmt="o",
-                color=COLORS[family(cond)],
-                markeredgecolor="white",
-                markeredgewidth=0.45,
-                markersize=5.0,
-                elinewidth=1.15,
-                capsize=2.2,
-                zorder=3,
-            )
+            est = -row.macro_f1_drop; lo = -row.macro_f1_drop_ci_high; hi = -row.macro_f1_drop_ci_low
+            ax.errorbar(est, yy, xerr=[[est - lo], [hi - est]], fmt="^" if cond == RB else "o",
+                        color=COLORS[family(cond)], markeredgecolor="white", markeredgewidth=0.45,
+                        markersize=5.0, elinewidth=1.15, capsize=2.2, zorder=3)
         ax.axvline(0, color="#333333", linewidth=0.65, zorder=1)
         ax.set_yticks(y, [short[c] for c in order])
-        ax.set_xlim(*limits)
-        ax.set_xticks(ticks)
+        for tick, cond in zip(ax.get_yticklabels(), order):
+            tick.set_color(COLORS[family(cond)])
+        ax.set_xlim(*limits); ax.set_xticks(ticks)
         ax.set_title(title, loc="left", fontsize=8.2, fontweight="bold", pad=2)
         ax.grid(axis="x", color="#D9D9D9", linewidth=0.55, zorder=0)
         ax.tick_params(axis="y", length=0)
         ax.spines[["top", "right", "left"]].set_visible(False)
-    axes[-1].set_xlabel("Change in macro F1 (masked − original)")
+    axes[-1].set_xlabel("Change in macro F1 (masked \u2212 original)")
     export(fig, "cue_masking_effects")
 
 
 def contrast_heatmap() -> None:
-    data = pd.read_csv(CONTRASTS)
-    models = ["qwen_sft_6000", "mistral_sft_3000", "tfidf_logreg_6000", "gpt54_10shot"]
-    contrasts = [
-        ("scald_vs_thermal_burn", "Scald / thermal burn"),
-        ("electrical_burn_vs_shock", "Electrical burn / shock"),
-        ("concussion_vs_internal_injury", "Concussion / internal head"),
-        ("laceration_vs_avulsion", "Laceration / avulsion"),
-        ("ingestion_vs_aspiration", "Ingestion / aspiration"),
-    ]
-    matrix = (
-        data.loc[data["model_key"].isin(models)]
-        .pivot(index="contrast_id", columns="model_key", values="accuracy")
-        .loc[[c[0] for c in contrasts], models]
-    )
+    mpl.rcParams.update({"ytick.labelsize": 8.0, "xtick.labelsize": 8.0, "axes.labelsize": 8.8, "axes.linewidth": 0.7})
+    cm = pd.read_csv(CONTRASTS)
+    cm = pd.concat([cm, pd.read_csv(ENCODER_PAIRS)], ignore_index=True)
+    models = ["qwen_sft_6000", "mistral_sft_3000", RB, "tfidf_logreg_6000", "gpt54_10shot"]
+    contrasts = [("scald_vs_thermal_burn", "Scald / thermal burn"), ("electrical_burn_vs_shock", "Electrical burn / shock"),
+                 ("concussion_vs_internal_injury", "Concussion / internal injury"), ("laceration_vs_avulsion", "Laceration / avulsion"),
+                 ("ingestion_vs_aspiration", "Ingestion / aspiration")]
+    matrix = cm.loc[cm["model_key"].isin(models)].pivot(index="contrast_id", columns="model_key", values="accuracy").loc[[c[0] for c in contrasts], models]
     values = np.vstack([matrix.to_numpy(), matrix.mean(axis=0).to_numpy()])
     row_labels = [c[1] for c in contrasts] + ["Mean"]
-    col_labels = ["Qwen\n6K", "Mistral\n3K", "TF-IDF", "GPT-5.4\n10-shot"]
-
+    col_labels = ["Qwen\nSFT 6K", "Mistral\nSFT 3K", "RoBERTa\nbase", "TF-IDF\nLR", "GPT-5.4\n10-shot"]
+    mpl.rcParams.update({"xtick.labelsize": 6.8, "ytick.labelsize": 7.6})
     fig, ax = plt.subplots(figsize=(3.35, 3.15), constrained_layout=True)
     image = ax.imshow(values, cmap="cividis", vmin=0.60, vmax=1.00, aspect="auto")
     ax.set_xticks(np.arange(len(col_labels)), col_labels)
@@ -451,19 +446,17 @@ def contrast_heatmap() -> None:
     ax.axhline(4.5, color="white", linewidth=1.5)
     for i in range(values.shape[0]):
         for j in range(values.shape[1]):
-            color = "white" if values[i, j] < 0.78 else "#111111"
-            ax.text(j, i, f"{values[i, j]:.3f}"[1:], ha="center", va="center", color=color, fontsize=7.4)
-    for spine in ax.spines.values():
-        spine.set_visible(False)
+            ax.text(j, i, f"{values[i, j]:.3f}"[1:], ha="center", va="center",
+                    color="white" if values[i, j] < 0.78 else "#111111", fontsize=7.0)
+    for sp in ax.spines.values(): sp.set_visible(False)
     cbar = fig.colorbar(image, ax=ax, orientation="horizontal", fraction=0.07, pad=0.08, aspect=25)
-    cbar.set_label("Subset accuracy", fontsize=8)
-    cbar.set_ticks([0.6, 0.7, 0.8, 0.9, 1.0])
-    cbar.outline.set_linewidth(0.5)
+    cbar.set_label("Subset accuracy", fontsize=8); cbar.set_ticks([0.6, 0.7, 0.8, 0.9, 1.0]); cbar.outline.set_linewidth(0.5)
     export(fig, "natural_contrast_heatmap")
 
 
 def learning_curve() -> None:
     """Plot single-seed SFT performance without implying a fitted scaling law."""
+    configure_style()
     conditions = {
         "Mistral-7B": ["mistral_sft_1000", "mistral_sft_3000", "mistral_sft_6000"],
         "Qwen2.5-7B": ["qwen_sft_1000", "qwen_sft_3000", "qwen_sft_6000"],
@@ -545,7 +538,7 @@ def write_manifest() -> None:
     manifest = {
         "inputs": {
             path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
-            for path in (SUMMARY, BOOTSTRAP, MASKING, CONTRASTS)
+            for path in (SUMMARY, BOOTSTRAP, MASKING, CONTRASTS, ENCODER, ENCODER_PAIRS, ROBERTA_MASKING)
         },
         "outputs": [
             f"figures/{stem}.{suffix}"
@@ -558,6 +551,13 @@ def write_manifest() -> None:
             )
             for suffix in ("svg", "pdf", "png")
         ],
+        "output_sha256": {
+            p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sorted(OUT.iterdir()) if p.suffix in {".pdf", ".png", ".svg"}
+        },
+        "generator_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "manuscript_figures": ["model_comparison_forest", "learning_curve_macro_f1", "cue_masking_effects", "natural_contrast_heatmap"],
+        "historical_supplement": "experimental_design_schematic (original benchmark only; not used in camera-ready)",
         "png_dpi": 600,
     }
     (OUT / "figure_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

@@ -1,0 +1,14 @@
+{
+  "release_version": "2.1.0",
+  "original_experiment_script_sha256": "94f2e4f24ed26d83adf244379413825924a2ba5d3da63ec56b51ede269c61cc4",
+  "original_script": "original_run_roberta_masking.py.txt",
+  "adapted_script": "analysis/robustness/roberta_masking/run_roberta_masking.py",
+  "adapted_script_sha256": "1d3406d241a679fa6aba9625472dcba6cded93805e2c36b0f9b7ec50418240b2",
+  "changes": [
+    "Repository-relative input paths",
+    "CLI checkpoint and prediction overrides",
+    "Outputs default to ignored methods_runs rather than published results",
+    "Optional separately labelled retraining replication"
+  ],
+  "release_validation_scope": "Published-output verification and CPU checks; no new GPU inference or training"
+}

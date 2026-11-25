@@ -1,0 +1,16 @@
+contrast_id,code_a,code_b,model_key,n,correct,accuracy
+scald_vs_thermal_burn,48,51,roberta_seed_20260718,100,79,0.79
+electrical_burn_vs_shock,46,67,roberta_seed_20260718,100,92,0.92
+concussion_vs_internal_injury,52,62,roberta_seed_20260718,100,90,0.9
+laceration_vs_avulsion,59,72,roberta_seed_20260718,100,95,0.95
+ingestion_vs_aspiration,41,42,roberta_seed_20260718,100,91,0.91
+scald_vs_thermal_burn,48,51,roberta_seed_20260719,100,82,0.82
+electrical_burn_vs_shock,46,67,roberta_seed_20260719,100,92,0.92
+concussion_vs_internal_injury,52,62,roberta_seed_20260719,100,88,0.88
+laceration_vs_avulsion,59,72,roberta_seed_20260719,100,93,0.93
+ingestion_vs_aspiration,41,42,roberta_seed_20260719,100,90,0.9
+scald_vs_thermal_burn,48,51,roberta_seed_20260720,100,83,0.83
+electrical_burn_vs_shock,46,67,roberta_seed_20260720,100,92,0.92
+concussion_vs_internal_injury,52,62,roberta_seed_20260720,100,90,0.9
+laceration_vs_avulsion,59,72,roberta_seed_20260720,100,94,0.94
+ingestion_vs_aspiration,41,42,roberta_seed_20260720,100,88,0.88

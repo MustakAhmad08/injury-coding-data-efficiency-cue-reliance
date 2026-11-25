@@ -10,3 +10,8 @@ artifacts to `figures/` and verify that all three files were created.
 3. `03_cue_masking_effects.ipynb`
 4. `04_natural_contrast_heatmap.ipynb`
 5. `05_sft_learning_curve.ipynb`
+
+The forest, masking, and diagnosis-pair figures include the primary RoBERTa-base
+run (seed 20260718). The schematic describes the original benchmark and is retained
+as a historical supplement. After regenerating individual figures, run the full
+generator to refresh `figures/figure_manifest.json`.

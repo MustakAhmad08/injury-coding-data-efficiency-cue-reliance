@@ -31,6 +31,8 @@ The nested 1K/3K/6K SFT runs use one seed per condition. Mistral's balanced macr
 
 The [term-masking experiment](../analysis/robustness/diagnosis_masking/RESULTS.md) masks 1,565 spans in 1,091 of 1,500 narratives. Macro-F1 changes from 0.875 to 0.651 for TF-IDF, 0.905 to 0.631 for Qwen, and 0.884 to 0.634 for Mistral. The automated lexicon is non-exhaustive and not clinician-validated; masking can remove useful evidence and create distribution shift. These findings measure sensitivity, not internal reasoning.
 
+The [RoBERTa extension](../analysis/robustness/roberta_masking/README.md) reduces primary-seed macro-F1 from 0.898 to 0.519 under term masking (drop 0.379, 95% CI [0.362, 0.400]); distinct-254 primary accuracy falls from 0.787 to 0.445. Marker removal changes macro-F1 by -0.003 and tail removal by -0.433. All three seeds and recorded reproduction checks are included. RoBERTa has the largest observed term/tail drops among these fixed models, without establishing a causal mechanism.
+
 [Secondary-diagnosis analysis](../analysis/error_analysis/secondary_diagnoses/README.md) separates 254 cases with distinct primary/secondary codes from 78 repeated-code cases. It measures primary, secondary, joint ordered predictions, and swaps; single-label classifiers provide primary predictions only. The full 332-case and distinct 254-case analyses answer different questions and are retained separately.
 
 ## Qualitative examples and audit

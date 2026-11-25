@@ -10,6 +10,18 @@
 # Prompt hashes validate the exact saved bytes; do not normalize these files.
 artifacts/prompts/** -text
 
+# Figure input hashes and experimental provenance validate exact saved bytes.
+results/primary/model_summary.csv -text
+results/primary/bootstrap_95ci.csv -text
+results/cue_masking/cue_reliance_summary.csv -text
+results/contrasts/contrast_metrics.csv -text
+results/contrasts/encoder_pair_accuracy.csv -text
+methods/roberta/results/comparison_metrics.csv -text
+analysis/robustness/roberta_masking/results/** -text
+analysis/robustness/roberta_masking/provenance/original_run_roberta_masking.py.txt -text
+figures/*.svg -text
+figures/*.pdf binary
+
 *.docx binary
 *.pptx binary
 *.png binary

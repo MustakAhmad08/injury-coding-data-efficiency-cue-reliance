@@ -3,7 +3,10 @@
     "results/primary/model_summary.csv": "afe1b5cbe56c6a42f322899d2aeed62a3052fa54eef1d9989248d106d06c6d68",
     "results/primary/bootstrap_95ci.csv": "d3608061e6156bdfe0cf1f538f8500b4ee6afd8aefa4407568422c4fef35d4c0",
     "results/cue_masking/cue_reliance_summary.csv": "96d740f87c2ec6302f6945f250839c759bc45479291f0dfa8629b7d5ad1f817b",
-    "results/contrasts/contrast_metrics.csv": "4a28b2bd81170a580429b5b9d43ea170b24d8fe7ccd76615935ce4b78bd1d5a6"
+    "results/contrasts/contrast_metrics.csv": "4a28b2bd81170a580429b5b9d43ea170b24d8fe7ccd76615935ce4b78bd1d5a6",
+    "methods/roberta/results/comparison_metrics.csv": "246095bde3c43f170bc4da0c217f2706e97fb10d1abd80ec8b0fe9468d611cae",
+    "results/contrasts/encoder_pair_accuracy.csv": "b62453f843be08b95b6ea947eeaa469265f0433a7f8eb3e61417165d7cdccd02",
+    "analysis/robustness/roberta_masking/results/roberta_masking_summary.csv": "5b60cda236ebea01a898b6a55254e6da30d86344e9708a8e67fdf0a238f7b1ad"
   },
   "outputs": [
     "figures/experimental_design_schematic.svg",
@@ -22,5 +25,30 @@
     "figures/learning_curve_macro_f1.pdf",
     "figures/learning_curve_macro_f1.png"
   ],
+  "output_sha256": {
+    "figures/cue_masking_effects.pdf": "026204a8410b9644e6c46f939d21b86db38ad42b86470d3e53b71abd708b2c52",
+    "figures/cue_masking_effects.png": "3c1e6c5ffe57f756a6cacf1e895782ddebcdbacb19ede0646299c44e5b98ac79",
+    "figures/cue_masking_effects.svg": "8d2316d5250f62f7236b1ed968fdde743cda6e2779722b0eddc4723323616c3f",
+    "figures/experimental_design_schematic.pdf": "a4d540899a41f7711d4b1dfb5dfa18fb60b3bde14f9d4a9a973eb27886de4e15",
+    "figures/experimental_design_schematic.png": "893eb7baae10c65fc256b667485f14c9f2391bbf61cb79be5231030675ea27c8",
+    "figures/experimental_design_schematic.svg": "2724f2ee1200a55aedeafb6094a9821557420c3cb96d26afcda5b0faa103c3db",
+    "figures/learning_curve_macro_f1.pdf": "294c9024f9c66c9fcc3fa7fdf05bce057fa2f408acf3c403efac89df2d53733e",
+    "figures/learning_curve_macro_f1.png": "06cd78d416bdc6633c177427069eee4209592c19f00a2561020eec6c31d6581c",
+    "figures/learning_curve_macro_f1.svg": "b100fc2a40cc2d755f0f14ba08c398a9e794c26583aaec0d110cb180d735eebe",
+    "figures/model_comparison_forest.pdf": "265e170eec426aeb2945830c6406e6123904f501aa4d97e478531246d24e4420",
+    "figures/model_comparison_forest.png": "c1ed9781983a53a8fbdfbc952b16e20bd640d814522eb86d6b54107ff51c1f0d",
+    "figures/model_comparison_forest.svg": "a09179975a352fcc0b9fa8c1cae20931e30d663e2002074a17309824fc45261e",
+    "figures/natural_contrast_heatmap.pdf": "43ce986a3471ea980ab77779d736acfb26af97fc13340adf41ea763928960f90",
+    "figures/natural_contrast_heatmap.png": "5d0973a6e9d7eb4fa779de6f217d69ef6ac0a0b781429291cee04e232d072591",
+    "figures/natural_contrast_heatmap.svg": "0720abc25a59f593464cf2921ec0acb98d1484bdd30e25c4768110e90e696afa"
+  },
+  "generator_sha256": "625ef78ba822fa0772bb382be97cb475cab6afce9034115527a8847161872297",
+  "manuscript_figures": [
+    "model_comparison_forest",
+    "learning_curve_macro_f1",
+    "cue_masking_effects",
+    "natural_contrast_heatmap"
+  ],
+  "historical_supplement": "experimental_design_schematic (original benchmark only; not used in camera-ready)",
   "png_dpi": 600
 }

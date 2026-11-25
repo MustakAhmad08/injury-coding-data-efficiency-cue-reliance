@@ -11,3 +11,5 @@ Run commands from the repository root.
 Generated inputs, predictions, and summaries stay in `methods_runs/cue_masking/`. Adapters default to `methods_runs/{condition}`; set `NEISS_ADAPTER_ROOT` to another adapter root. This intervention differs from lexicon-based diagnosis-term masking in `analysis/robustness/diagnosis_masking/`.
 
 [Published outputs / reference](../../../results/cue_masking) ? [Reproduction commands](../../../docs/REPRODUCIBILITY.md) ? [Authoritative result map](../../../docs/RESULT_MAP.md)
+
+The camera-ready [RoBERTa masking extension](../roberta_masking/README.md) reports all three selected seeds and is kept separate from the original three-model snapshots.

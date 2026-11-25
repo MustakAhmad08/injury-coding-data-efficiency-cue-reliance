@@ -1,4 +1,4 @@
-"""Static integrity checks for the anonymous GitHub release."""
+"""Static integrity checks for the public GitHub release."""
 
 from __future__ import annotations
 
@@ -17,8 +17,6 @@ TEXT_SUFFIXES = {
 FORBIDDEN = (
     re.compile(r"C:\\Users\\", re.I),
     re.compile("One" + "Drive", re.I),
-    re.compile("pur" + "due", re.I),
-    re.compile("ahmad" + "100", re.I),
     re.compile(r"sk-[A-Za-z0-9_-]{12,}"),
 )
 
@@ -104,7 +102,7 @@ def main() -> None:
         raise AssertionError("Per-category results must contain 15 conditions x 30 codes")
 
     print(
-        "Release check passed: structure, anonymity, Python syntax, prompt hashes, "
+        "Release check passed: structure, path/credential hygiene, Python syntax, prompt hashes, "
         "headline metrics, and 15 x 30 per-code results."
     )
 

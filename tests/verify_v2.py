@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def verify_analysis_layout():
     groups = {
         'data_quality': {'dataset_composition', 'source_distribution', 'label_audit'},
-        'robustness': {'proportional_test', 'diagnosis_masking', 'cue_masking'},
+        'robustness': {'proportional_test', 'diagnosis_masking', 'cue_masking', 'roberta_masking'},
         'error_analysis': {'secondary_diagnoses', 'qualitative_errors', 'contrasts', 'secondary_all_cases', 'error_pairs'},
         'benchmark': set(),
         'prompt_ablation': set(),
@@ -38,7 +38,7 @@ def main():
     assert (ROOT / "results/error_pairs/error_pair_counts.csv").is_file()
     assert (ROOT / "results/secondary_all_cases/secondary_diagnosis_summary.csv").is_file()
     verify_original()
-    assert (ROOT/'VERSION').read_text().strip()=='2.0.0'
+    assert (ROOT/'VERSION').read_text().strip()=='2.1.0'
     p=ROOT/'analysis/robustness/proportional_test/results'
     with (p/'metrics.csv').open(newline='',encoding='utf-8') as f:metrics=[r for r in csv.DictReader(f) if not r['condition'].startswith('roberta') or r['condition']=='roberta_seed_20260718']
     assert {r['condition'] for r in metrics}=={'tfidf_logreg_6000','qwen_sft_6000','mistral_sft_3000','roberta_seed_20260718'}
@@ -64,6 +64,8 @@ def main():
             target=target.strip('<>').split('#')[0]
             if target and '://' not in target and not target.startswith('mailto:'):
                 assert (page.parent/target).exists(), (page.relative_to(ROOT),target)
-    print('V2 checks passed: primary seed, 4 x 30 proportional metrics, sample counts, audit snapshot, no local/model artifacts.')
+    from verify_camera_ready import main as verify_camera_ready
+    verify_camera_ready()
+    print('Release checks passed: primary seed, 4 x 30 proportional metrics, sample counts, audit snapshot, no local/model artifacts.')
 
 if __name__=='__main__':main()

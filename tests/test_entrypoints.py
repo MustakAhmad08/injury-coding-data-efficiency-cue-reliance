@@ -13,6 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class EntrypointTests(unittest.TestCase):
+    def test_roberta_masking_help_without_scientific_dependencies(self):
+        runner = ROOT / 'analysis/robustness/roberta_masking/run_roberta_masking.py'
+        result = subprocess.run([sys.executable, '-S', '-B', str(runner), '--help'],
+                                cwd=ROOT, text=True, capture_output=True, check=True)
+        self.assertIn('--original-predictions', result.stdout)
+        self.assertIn('--allow-new-checkpoints', result.stdout)
+
     def test_repository_roots(self):
         checked = 0
         for folder in ('methods', 'analysis'):

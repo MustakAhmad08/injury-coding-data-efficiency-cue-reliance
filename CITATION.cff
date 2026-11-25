@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software or benchmark, please cite the accompanying EACL 2027 paper."
+title: "What Do Fine-Tuned Models Learn About Injury Coding? Data Efficiency and Cue Reliance in Narrative Classification"
+type: software
+authors:
+  - family-names: Ahmad
+    given-names: Mustak
+    affiliation: Purdue University, West Lafayette
+  - family-names: Chakravarty
+    given-names: Rishab
+    affiliation: Purdue University, West Lafayette
+  - family-names: Nanda
+    given-names: Gaurav
+    affiliation: Purdue University, West Lafayette
+version: 2.1.0
+date-released: 2026-11-25
+repository-code: "https://github.com/MustakAhmad08/injury-coding-data-efficiency-cue-reliance"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "What Do Fine-Tuned Models Learn About Injury Coding? Data Efficiency and Cue Reliance in Narrative Classification"
+  authors:
+    - family-names: Ahmad
+      given-names: Mustak
+    - family-names: Chakravarty
+      given-names: Rishab
+    - family-names: Nanda
+      given-names: Gaurav
+  year: 2027
+  collection-title: "Proceedings of EACL 2027"
+  notes: "Accepted paper; final proceedings URL, DOI, and page numbers pending."
